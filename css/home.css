@@ -34,7 +34,7 @@ body {
 }
 
 body {
-    font-family: 'iosevka-regular';
+    font-family: 'Iosevka Regular';
     display: flex;
     background-color: var(--Base);
     color: var(--Text);
@@ -43,7 +43,7 @@ body {
 }
 
 #topbar {
-    font-family: "Iosevka";
+    font-family: "Iosevka Regular";
     display: flex;
     padding: 1.5%;
     flex-direction: row;
@@ -52,6 +52,12 @@ body {
     animation-name: loadIn;
     animation-duration: 1s;
     animation-direction: normal;
+}
+
+#content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
 }
 
 #name {
@@ -95,11 +101,13 @@ body {
 }
 
 #mainGreetCont {
-    display: inline-flex;
+    display: flex;
+    /* This has to change  */
+    height: calc(100vh - 8.7vh);
     flex-grow: 1;
-    /* justify-content: center; */
     align-items: center;
 }
+
 
 #mainGreet {
     animation-name: loadIn;
@@ -121,6 +129,10 @@ body {
     font-family: "Iosevka Thin";
     font-size: 3vw;
     line-height: 3vw;
+}
+
+.things {
+    color: var(--Sky);
 }
 
 #mainGreet>span:nth-child(4) {

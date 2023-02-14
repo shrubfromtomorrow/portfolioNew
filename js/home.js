@@ -17,7 +17,7 @@ let fetchStringLines = [
     "│       <span>✦</span>             │\n",
     "│                      │\n",
     "└──────────────────────┘\n                          <em style='color: #24273a'>██</em><em style='color: #1e2030'>██</em><em style='color: #363a4f'>██</em><em style='color: #494d64'>██</em><em style='color: #5b6078'>██</em><em style='color: #cad3f5'>██</em><em style='color: #f4dbd6'>██</em><em style='color: #b7bdf8'>██</em>\n",
-    "\n                          <em style='color: #89dceb'>██</em><em style='color: #ed8796'>██</em><em style='color: #f5a97f'>██</em><em style='color: #eed49f'>██</em><em style='color: #a6da95'>██</em><em style='color: #8aadf4'>██</em><em style='color: #c6a0f6'>██</em><em style='color: #f0c6c6'>██</em>"
+    "\n                          <em style='color: #89dceb'>██</em><em style='color: #ed8796'>██</em><em style='color: #f5a97f'>██</em><em style='color: #eed49f'>██</em><em style='color: #a6da95'>██</em><em style='color: #8aadf4'>██</em><em style='color: #c6a0f6'>██</em><em style='color: #f0c6c6'>██</em>",
 ];
 
 // <em style='color: #24273a; line-height: 1vh'>█ </em><em style='color: #1e2030'>█ </em><em style='color: #363a4f'>█ </em><em style='color: #494d64'>█ </em><em style='color: #5b6078'>█ </em><em style='color: #cad3f5'>█ </em><em style='color: #f4dbd6'>█ </em><em style='color: #b7bdf8'>█</em>
@@ -29,6 +29,11 @@ let typedString = "orionfetch";
 let intervals = 0;
 
 window.onload = function () {
+    window.scroll({
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+       });
     setTimeout(function () {
         let interval = setInterval(function () {
             if (intervals >= typedString.length) {
@@ -37,7 +42,7 @@ window.onload = function () {
                 intervals = 0;
             } else {
                 terminalLine.textContent =
-                terminalLine.textContent + typedString[intervals];
+                    terminalLine.textContent + typedString[intervals];
                 intervals++;
             }
         }, 100);
@@ -45,17 +50,17 @@ window.onload = function () {
     }, 4000);
 };
 
-
 function fetch() {
-    setTimeout( function () {
+    setTimeout(function () {
         terminalLineSpan.textContent = "";
         let interval2 = setInterval(function () {
             if (intervals >= fetchStringLines.length) {
                 clearInterval(interval2);
             } else {
-                orionFetch.innerHTML = orionFetch.innerHTML + fetchStringLines[intervals];
+                orionFetch.innerHTML =
+                    orionFetch.innerHTML + fetchStringLines[intervals];
                 intervals++;
             }
-        }, 50)
+        }, 50);
     }, 2000);
 }
