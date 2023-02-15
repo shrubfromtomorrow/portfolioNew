@@ -58,6 +58,7 @@ body {
     display: flex;
     height: 100%;
     flex-direction: column;
+    /* justify-content: center; */
 }
 
 #name {
@@ -103,7 +104,7 @@ body {
 #mainGreetCont {
     display: flex;
     /* This has to change  */
-    height: calc(100vh - 8.7vh);
+    /* height: calc(100vh - 8.7vh); */
     flex-grow: 1;
     align-items: center;
 }
@@ -133,6 +134,17 @@ body {
 
 .things {
     color: var(--Sky);
+}
+
+hr {
+    display: flex;
+    height: 1px;
+    border: none;
+    background-color: var(--Sky);
+    width: 93vw;
+    margin: 0px;
+    margin-left: 3.5vw;
+    /* justify-self: center; */
 }
 
 #mainGreet>span:nth-child(4) {
@@ -190,3 +202,38 @@ body {
 #orionFetch > span {
     color: var(--Sky);
 }
+
+#projects {
+    position: absolute;
+    top: 100vh;
+    font-size: 1.5vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+}
+
+#projectsHeader {
+    grid-column: span 2;
+    margin: 5vw;
+    margin-left: 10vw;
+}
+
+#graphingCalc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-left: 10vw;
+}
+
+#graphingCalcTitle {
+    margin: 1vw;
+    font-family: 'Iosevka Thin';
+    align-items: center;
+}
+
+#calculatorIm {
+    object-fit: cover;
+    height: 100%;
+    width: 50%;
+}
+
