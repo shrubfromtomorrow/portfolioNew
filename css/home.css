@@ -207,8 +207,8 @@ hr {
     position: absolute;
     top: 100vh;
     font-size: 1.5vw;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     max-width: 100vw;
 }
 
@@ -219,10 +219,12 @@ hr {
 }
 
 #graphingCalc {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
 }
 
 #graphingCalcTitle {
@@ -233,7 +235,31 @@ hr {
 
 #calculatorIm {
     object-fit: cover;
-    height: 100%;
-    width: 50%;
+    width: 20%;
+    aspect-ratio: 1;
+}
+
+#lightingIn2D {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
+}
+
+#lightingIn2DTitle {
+    margin: 1vw;
+    margin-left: 15vw;
+    font-family: 'Iosevka Thin';
+    align-items: center;
+}
+
+#lightingIn2DIm {
+    margin-left: 1vw;
+    object-fit: cover;
+    width: 20%;
+    aspect-ratio: 1;
 }
 

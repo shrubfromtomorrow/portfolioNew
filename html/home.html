@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../css/cssReset.css" />
+        <link rel="stylesheet" href="../css/home.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/shrek.png" />
-    <link rel="stylesheet" href="../css/cssReset.css" />
-    <link rel="stylesheet" href="../css/home.css" />
-</head>
-
-<body>
-    <div id="topbar">
-        <div id="name">Orion<br />Andrews</div>
-        <div id="navbar">
-            <div>Home</div>
-            <span>|</span>
-            <div>Work</div>
-            <span>|</span>
-            <div>About</div>
-        </div>
-    </div>
-    <div id="content">
-        <div id="mainGreetCont">
-            <div id="mainGreet">
-                <span>Hi,<br /></span>
-                I'm <span>Orion.<br /></span>
-                <span>I do a lot of <span class="things">things</span>.<br /></span>
-                <span>Have a look.<br /></span>
+    <body>
+        <div id="topbar">
+            <div id="name">Orion<br />Andrews</div>
+            <div id="navbar">
+                <div>Home</div>
+                <span>|</span>
+                <div>Work</div>
+                <span>|</span>
+                <div>About</div>
             </div>
-            <div id="terminal">
-                <pre>user@shrubfromtomorrow ~ > <div id="terminalLine"></div><span>_</span>
+        </div>
+        <div id="content">
+            <div id="mainGreetCont">
+                <div id="mainGreet">
+                    <span>Hi,<br /></span>
+                    I'm <span>Orion.<br /></span>
+                    <span
+                        >I do a lot of <span class="things">things</span>.<br
+                    /></span>
+                    <span>Have a look.<br /></span>
+                </div>
+                <div id="terminal">
+                    <pre>user@shrubfromtomorrow ~ > <div id="terminalLine"></div><span>_</span>
                     <pre id="orionFetch"></pre>
                 </pre>
+                </div>
+            </div>
+            <div id="projects">
+                <hr />
+                <div id="projectsHeader">
+                    Here are some (objectively) cool
+                    <span class="things">things</span> I've done:
+                </div>
+                <div id="graphingCalc">
+                    <div id="graphingCalcTitle">
+                        Graphing Calculator ───────────────────────────
+                    </div>
+                    <img
+                        id="calculatorIm"
+                        src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg"
+                    />
+                </div>
+                <div id="lightingIn2D">
+                    <img
+                        id="lightingIn2DIm"
+                        src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg"
+                    />
+                    <div id="lightingIn2DTitle">
+                        ─────────────────────────── Lighting In 2D
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <div id="projects">
-            <hr>
-            <div id="projectsHeader">Here are some (objectively) cool <span class="things">things</span> I've done:
-            </div>
-            <div id="graphingCalc">
-                <div id="graphingCalcTitle">Graphing Calculator</div><img id="calculatorIm"
-                    src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg">
-            </div>
-        </div>
-    </div>
-    <script src="../js/home.js"></script>
-</body>
-
+        <script src="../js/home.js"></script>
+    </body>
 </html>
