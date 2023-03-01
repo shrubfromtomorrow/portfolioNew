@@ -56,7 +56,7 @@ body {
 
 #content {
     display: flex;
-    height: 100%;
+    /* height: 100%; */
     flex-direction: column;
     /* justify-content: center; */
 }
@@ -75,7 +75,11 @@ body {
     font-size: 1.25vw;
 }
 
-#navbar>div {
+#navbar>a,
+#navbar:visited,
+#navbar:link {
+    color: var(--Text);
+    text-decoration: none;
     font-size: clamp(1.175vw, 1.175vw, 2vw);
     line-height: 1.75;
     padding-top: .5vw;
@@ -92,8 +96,8 @@ body {
     color: var(--Sky);
 }
 
-#navbar>div:hover,
-#navbar>div:focus {
+#navbar>a:hover,
+#navbar>a:focus {
     cursor: pointer;
     background-color: var(--Base);
     color: var(--Text);
@@ -102,6 +106,8 @@ body {
 }
 
 #mainGreetCont {
+    margin-top: 22vh;
+    margin-bottom: 31vh;
     display: flex;
     /* This has to change  */
     /* height: calc(100vh - 8.7vh); */
@@ -204,7 +210,7 @@ hr {
 }
 
 #projects {
-    position: absolute;
+    /* scroll-margin-top: 100vh; */
     top: 100vh;
     font-size: 1.5vw;
     display: flex;
@@ -228,7 +234,6 @@ hr {
 }
 
 #graphingCalcTitle {
-    margin: 1vw;
     font-family: 'Iosevka Thin';
     align-items: center;
 }
@@ -250,16 +255,50 @@ hr {
 }
 
 #lightingIn2DTitle {
-    margin: 1vw;
-    margin-left: 15vw;
     font-family: 'Iosevka Thin';
     align-items: center;
 }
 
 #lightingIn2DIm {
-    margin-left: 1vw;
     object-fit: cover;
     width: 20%;
     aspect-ratio: 1;
 }
 
+#guides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
+}
+
+#guidesTitle {
+    font-family: 'Iosevka Thin';
+    align-items: center;
+}
+
+#guidesIm {
+    object-fit: cover;
+    width: 20%;
+    aspect-ratio: 1;
+}
+
+.scroll {
+    transform: translateY(50px);
+    transition-delay: .3s;
+    transition: .4s;
+    opacity: 0;
+}
+
+.inView {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+#footer {
+    position: relative;
+    height: 30vh;
+}

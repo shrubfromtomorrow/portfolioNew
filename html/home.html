@@ -15,17 +15,17 @@
     </head>
 
     <body>
-        <div id="topbar">
-            <div id="name">Orion<br />Andrews</div>
-            <div id="navbar">
-                <div>Home</div>
-                <span>|</span>
-                <div>Work</div>
-                <span>|</span>
-                <div>About</div>
-            </div>
-        </div>
         <div id="content">
+            <div id="topbar">
+                <div id="name">Orion<br />Andrews</div>
+                <div id="navbar">
+                    <a href="home.html">Home</a>
+                    <span>|</span>
+                    <a href="work.html">Work</a>
+                    <span>|</span>
+                    <a>About</a>
+                </div>
+            </div>
             <div id="mainGreetCont">
                 <div id="mainGreet">
                     <span>Hi,<br /></span>
@@ -47,7 +47,7 @@
                     Here are some (objectively) cool
                     <span class="things">things</span> I've done:
                 </div>
-                <div id="graphingCalc">
+                <div id="graphingCalc" class="scroll">
                     <div id="graphingCalcTitle">
                         Graphing Calculator ───────────────────────────
                     </div>
@@ -56,17 +56,25 @@
                         src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg"
                     />
                 </div>
-                <div id="lightingIn2D">
+                <div id="lightingIn2D" class="scroll">
                     <img
                         id="lightingIn2DIm"
                         src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg"
                     />
-                    <div id="lightingIn2DTitle">
-                        ─────────────────────────── Lighting In 2D
+                    <div id="lightingIn2DTitle">──────────────────────────────── Lighting In 2D
                     </div>
                 </div>
-                
+                <div id="guides" class="scroll">
+                    <div id="guidesTitle">
+                        Guides ────────────────────────────────────────
+                    </div>
+                    <img
+                        id="guidesIm"
+                        src="/home/orion/Downloads/photo-1524275804141-5e9f2bc5a71d.jpeg"
+                    />
+                </div>
             </div>
+            <div id="footer"></div>
         </div>
         <script src="../js/home.js"></script>
     </body>
