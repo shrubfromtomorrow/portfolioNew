@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Iosevka Regular";
+    src: url("../assets/fonts/iosevka-regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Iosevka Bold";
+    src: url("../assets/fonts/iosevka-bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Iosevka Thin";
+    src: url("../assets/fonts/iosevka-thin.ttf") format('truetype');
+}
+
+@keyframes loadIn {
+    from {
+        transform: translateY(5%);
+        opacity: 0;
+      }
+    
+      to {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Iosevka Regular';
+    display: flex;
+    background-color: var(--Base);
+    color: var(--Text);
+    font-size: 1vw;
+    flex-direction: column;
+}
+
+#topbar {
+    font-family: "Iosevka Regular";
+    display: flex;
+    padding: 1.5%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: auto;
+    animation-name: loadIn;
+    animation-duration: 1s;
+    animation-direction: normal;
+}
+
+#content {
+    display: flex;
+    /* height: 100%; */
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+#name {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vw;
+    color: var(--Sky);
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 20vw;
+    font-size: 1.25vw;
+}
+
+#navbar>a,
+#navbar:visited,
+#navbar:link {
+    color: var(--Text);
+    text-decoration: none;
+    font-size: clamp(1.175vw, 1.175vw, 2vw);
+    line-height: 1.75;
+    padding-top: .5vw;
+    padding-bottom: 0vw;
+    padding-left: clamp(1vw, 3vw, 3vw);
+    padding-right: clamp(1vw, 3vw, 3vw);
+    transition: all 0.25s ease;
+    border: 2px solid var(--Sky);
+    border-radius: .5rem;
+}
+
+#navbar>span {
+    padding: 1vw;
+    color: var(--Sky);
+}
+
+#navbar>a:hover,
+#navbar>a:focus {
+    cursor: pointer;
+    background-color: var(--Base);
+    color: var(--Text);
+    transform: translate(-.5rem, -.5rem);
+    box-shadow: .5rem .5rem var(--Text);
+}
+
+.scroll {
+    transform: translateY(50px);
+    transition-delay: .3s;
+    transition: .4s;
+    opacity: 0;
+}
+
+.inView {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+hr {
+    display: flex;
+    height: 1px;
+    border: none;
+    background-color: var(--Sky);
+    width: 93vw;
+    margin: 0px;
+    margin-left: 3.5vw;
+    /* justify-self: center; */
+}
+
+.things {
+    color: var(--Sky);
+}

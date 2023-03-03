@@ -1,104 +1,121 @@
-@font-face {
-    font-family: "Iosevka Regular";
-    src: url("../assets/fonts/iosevka-regular.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "Iosevka Bold";
-    src: url("../assets/fonts/iosevka-bold.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "Iosevka Thin";
-    src: url("../assets/fonts/iosevka-thin.ttf") format('truetype');
-}
-
-@keyframes loadIn {
-    from {
-        transform: translateY(5%);
-        opacity: 0;
-      }
-    
-      to {
-        transform: translateY(0%);
-        opacity: 1;
-      }
-}
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    font-family: 'Iosevka Regular';
+#workGreetCont {
+    margin-top: 33vh;
+    margin-bottom: 35vh;
     display: flex;
-    background-color: var(--Base);
-    color: var(--Text);
-    font-size: 1vw;
-    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
 }
 
-#topbar {
-    font-family: "Iosevka Regular";
-    display: flex;
-    padding: 1.5%;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-basis: auto;
+
+#workGreet {
     animation-name: loadIn;
     animation-duration: 1s;
-    animation-direction: normal;
-}
-
-#content {
-    display: flex;
-    /* height: 100%; */
-    flex-direction: column;
-    /* justify-content: center; */
-}
-
-#name {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5vw;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 10vw;
+    font-size: 10vw;
     color: var(--Sky);
+    /* text-shadow: -.175rem .175rem var(--Text); */
 }
 
-#navbar {
+#workSum {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 15vw;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+#projects {
+    /* scroll-margin-top: 100vh; */
+    top: 100vh;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+}
+
+#projectsHeader {
+    grid-column: span 2;
+    margin: 5vw;
+    margin-left: 10vw;
+}
+
+#graphingCalc {
     display: flex;
     flex-direction: row;
-    flex-basis: 20vw;
-    font-size: 1.25vw;
+    align-items: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
 }
 
-#navbar>a,
-#navbar:visited,
-#navbar:link {
-    color: var(--Text);
-    text-decoration: none;
-    font-size: clamp(1.175vw, 1.175vw, 2vw);
-    line-height: 1.75;
-    padding-top: .5vw;
-    padding-bottom: 0vw;
-    padding-left: clamp(1vw, 3vw, 3vw);
-    padding-right: clamp(1vw, 3vw, 3vw);
-    transition: all 0.25s ease;
-    border: 2px solid var(--Sky);
-    border-radius: .5rem;
+#graphingCalcTitle {
+    font-family: 'Iosevka Regular';
+    line-height: 2vw;
+    align-items: center;
 }
 
-#navbar>span {
-    padding: 1vw;
-    color: var(--Sky);
+#graphingCalcTitle>span {
+    font-family: 'Iosevka Thin';
 }
 
-#navbar>a:hover,
-#navbar>a:focus {
-    cursor: pointer;
-    background-color: var(--Base);
-    color: var(--Text);
-    transform: translate(-.5rem, -.5rem);
-    box-shadow: .5rem .5rem var(--Text);
+#calculatorIm {
+    object-fit: cover;
+    width: 20%;
+    aspect-ratio: 1;
+}
+
+#lightingIn2D {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
+}
+
+#lightingIn2DTitle {
+    font-family: 'Iosevka Regular';
+    line-height: 2vw;
+    align-items: center;
+}
+
+#lightingIn2DTitle>span {
+    font-family: 'Iosevka Thin';
+}
+
+#lightingIn2DIm {
+    object-fit: cover;
+    width: 20%;
+    aspect-ratio: 1;
+}
+
+#guides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    justify-content: space-around;
+}
+
+#guidesTitle {
+    font-family: 'Iosevka Regular';
+    line-height: 2vw;
+    align-items: center;
+}
+
+#guidesTitle>span {
+    font-family: 'Iosevka Thin';
+}
+
+#guidesIm {
+    object-fit: cover;
+    width: 20%;
+    aspect-ratio: 1;
 }
