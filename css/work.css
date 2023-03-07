@@ -1,6 +1,6 @@
 #workGreetCont {
     margin-top: 33vh;
-    margin-bottom: 35vh;
+    margin-bottom: 36vh;
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -53,19 +53,44 @@
 }
 
 #graphingCalcTitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25vw;
     font-family: 'Iosevka Regular';
     line-height: 2vw;
-    align-items: center;
+    align-items: self-end;
+    text-align: right;
 }
 
 #graphingCalcTitle>span {
+    font-size: 1.5vw;
     font-family: 'Iosevka Thin';
+}
+
+#graphingCalcTitle>span>span {
+    font-size: 1.5vw;
+    font-family: 'Iosevka Regular';
+}
+
+#calculatorImCont {
+    width: 20%;
+    aspect-ratio: 1;
 }
 
 #calculatorIm {
     object-fit: cover;
-    width: 20%;
+    width: 100%;
     aspect-ratio: 1;
+    transition: all 0.25s ease;
+
+}
+
+#calculatorIm:hover {
+    cursor: pointer;
+    background-color: var(--Base);
+    color: var(--Text);
+    transform: translate(-.5rem, -.5rem);
+    box-shadow: .5rem .5rem var(--Text);
 }
 
 #lightingIn2D {
@@ -79,18 +104,33 @@
 }
 
 #lightingIn2DTitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25vw;
     font-family: 'Iosevka Regular';
     line-height: 2vw;
-    align-items: center;
+    align-items: self-start;
+    text-align: left;
 }
 
 #lightingIn2DTitle>span {
+    font-size: 1.5vw;
     font-family: 'Iosevka Thin';
+}
+
+#lightingIn2DTitle>span>span {
+    font-size: 1.5vw;
+    font-family: 'Iosevka Regular';
+}
+
+#lightingIn2DImCont {
+    width: 20%;
+    aspect-ratio: 1;
 }
 
 #lightingIn2DIm {
     object-fit: cover;
-    width: 20%;
+    width: 100%;
     aspect-ratio: 1;
 }
 
@@ -105,17 +145,32 @@
 }
 
 #guidesTitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25vw;
     font-family: 'Iosevka Regular';
     line-height: 2vw;
-    align-items: center;
+    align-items: self-end;
+    text-align: right;
 }
 
 #guidesTitle>span {
+    font-size: 1.5vw;
     font-family: 'Iosevka Thin';
+}
+
+#guidesTitle>span>span {
+    font-size: 1.5vw;
+    font-family: 'Iosevka Regular';
+}
+
+#guidesImCont {
+    width: 20%;
+    aspect-ratio: 1;
 }
 
 #guidesIm {
     object-fit: cover;
-    width: 20%;
+    width: 100%;
     aspect-ratio: 1;
 }
