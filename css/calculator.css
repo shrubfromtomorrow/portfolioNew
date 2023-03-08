@@ -1,0 +1,59 @@
+#calcGreetCont {
+    margin-top: 22vh;
+    margin-bottom: 36vh;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+
+#calcGreet {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 10vw;
+    font-size: 9vw;
+    color: var(--Sky);
+    /* text-shadow: -.175rem .175rem var(--Text); */
+}
+
+#calcSum {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 15vw;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+#project {
+    background-color: var(--Text);
+    color: var(--Base);
+}
+
+.header {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: flex;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    justify-content: center;
+    font-family: "Iosevka Regular";
+    font-size: 6vw;
+    color: var(--Base);
+}
+
+.content {
+    font-size: 2.5vh;
+    line-height: 4vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+
+#footer {
+    background-color: var(--Text);
+    position: relative;
+    height: 30vh;
+}

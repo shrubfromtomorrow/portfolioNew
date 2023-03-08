@@ -174,3 +174,8 @@
     width: 100%;
     aspect-ratio: 1;
 }
+
+#footer {
+    position: relative;
+    height: 30vh;
+}
