@@ -215,3 +215,7 @@ hr {
 .things {
     color: var(--Sky);
 }
+
+strong {
+    font-family: "Iosevka Bold";
+}

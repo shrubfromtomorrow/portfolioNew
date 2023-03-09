@@ -52,6 +52,18 @@
     margin-right: 25vw;
 }
 
+.content>a:visited,
+.content>a:link {
+    color: var(--Crust);
+    text-decoration: underline;
+}
+
+.content>a:visited:hover,
+.content>a:link:hover {
+    color: var(--Crust);
+    text-decoration: none;
+}
+
 #footer {
     background-color: var(--Text);
     position: relative;
