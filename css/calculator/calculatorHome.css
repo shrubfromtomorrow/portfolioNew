@@ -64,6 +64,30 @@
     text-decoration: none;
 }
 
+#designLinkCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+#designLink {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+#designLink:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
+}
+
 #footer {
     background-color: var(--Text);
     position: relative;

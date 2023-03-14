@@ -1,0 +1,44 @@
+#designGreetCont {
+    margin-top: 22vh;
+    margin-bottom: 29.7vh;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+
+#designGreet {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 10vw;
+    font-size: 9vw;
+    color: var(--Sky);
+    /* text-shadow: -.175rem .175rem var(--Text); */
+}
+
+#designSum {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 15vw;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+#project {
+    background-color: var(--Text);
+    color: var(--Base);
+}
+
+
+
+
+
+#footer {
+    background-color: var(--Text);
+    position: relative;
+    height: 30vh;
+}
