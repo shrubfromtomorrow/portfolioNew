@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
+    <head>
+        <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Calculator</title>
@@ -13,32 +13,81 @@
         <link rel="stylesheet" href="../../css/cssReset.css" />
         <link rel="stylesheet" href="../../css/default.css" />
         <link rel="stylesheet" href="../../css/calculator/design.css" />
-</head>
-<body>
-    <div id="content">
-        <div id="topbar">
-            <div id="name">Orion<br />Andrews</div>
-            <div id="navbar">
-                <a href="home.html">Home</a>
-                <span>|</span>
-                <a href="work.html">Work</a>
-                <span>|</span>
-                <a>About</a>
+    </head>
+    <body>
+        <div id="content">
+            <div id="topbar">
+                <div id="name">Orion<br />Andrews</div>
+                <div id="navbar">
+                    <a href="home.html">Home</a>
+                    <span>|</span>
+                    <a href="work.html">Work</a>
+                    <span>|</span>
+                    <a>About</a>
+                </div>
             </div>
-        </div>
-        <div id="designGreetCont">
-            <div id="designGreet">
-                The <br />
-                Design
+            <div id="designGreetCont">
+                <div id="designGreet">
+                    The <br />
+                    Design
+                </div>
+                <div id="designSum">The design of my calculator project.</div>
             </div>
-            <div id="designSum">The design of my calculator project.</div>
+            <div id="project">
+                <div id="intro" class="header scroll">Reresearching</div>
+                <div id="introDesc" class="content scroll">
+                    So, now knowing what it was I was going to do to try and
+                    solve this issue, I needed to complete a second phase of
+                    research where I pull pieces of information together on how
+                    to create my calculator. The first thing I would need would
+                    be software. Even if the calculator never got made
+                    physically, knowing that there was some software that could
+                    be put into any hardware would be a success to me.
+                    <br /><br />
+                    I quickly decided to use a JavaScript framwork called
+                    Electron. Anyone who has written an application will groan
+                    at seeing that. Electron allows me to effectively create a
+                    website that runs locally. This is great for a few reasons,
+                    the largest of which is that I know how to create the
+                    content, scripts, and most importantly, the styling. I say
+                    styling is the most important because I knew I was going to
+                    create a proof of concept, not a full product and how it
+                    looks will be the thing most people will notice. The main
+                    disadvantage of Electron is that it is terrible in the
+                    performance department as it is basically a web browser. It
+                    is also really easy to make an app in it and people that
+                    have worked with one standard for a long time get really
+                    angry when something easier becomes popular.<br /><br />
+                    The next thing I would need is hardware. A screen, computer
+                    of some kind, keyboard, and a case. The computer department
+                    was an easy choice for me, I was using raspberry pis
+                    extensively during the time of the inception of this project
+                    and their familiarity drew me. I had also made many
+                    mechanical keyboards before and while it was honestly a
+                    silly pipe dream to fit a mechanical keyboard in a
+                    calculator, it did work out in the end. Case would be easy,
+                    I had access to 3D printers and could create prototypes in
+                    CAD quite easily. And lastly the screen, it appears someone
+                    has made a
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://www.uctronics.com/uctronics-3-5-inch-hdmi-tft-lcd-display-with-touch-screen-touch-pen-3-heat-sinks-for-raspberry-pi-3-model-b-pi-2-model-b-pi-b.html"
+                        >product</a
+                    >
+                    just for this purpose that slots directly into the gpio pins
+                    of my raspberry pi and has a convenient hdmi "flipper".<br /><br />So
+                    how would I load my software? Well, in the beginning, I
+                    thought I would modify the Linux kernel a little bit so that
+                    when it booted, I would boot directly into my program. Later
+                    in this process i realized that this was an idiotic idea for
+                    a proof of concept as it would take far too much time and it
+                    wouldn't really get noticed in such an initial product. <br/>Another idea I had was to create my own
+                </div>
+            </div>
+
+            <div id="footer"></div>
         </div>
-        <div id="project"></div>
-
-        <div id="footer"></div>
-    </div>
-    <script src="../../js/work.js"></script>
-
-    
-</body>
+        <script src="../../js/work.js"></script>
+    </body>
 </html>

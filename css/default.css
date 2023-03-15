@@ -187,6 +187,37 @@ body {
     box-shadow: .5rem .5rem var(--Text);
 }
 
+.header {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: flex;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    justify-content: center;
+    font-family: "Iosevka Regular";
+    font-size: 6vw;
+    color: var(--Base);
+}
+
+.content {
+    font-size: 2.5vh;
+    line-height: 4vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+
+.content>a:visited,
+.content>a:link {
+    color: var(--Crust);
+    text-decoration: underline;
+}
+
+.content>a:visited:hover,
+.content>a:link:hover {
+    color: var(--Crust);
+    text-decoration: none;
+}
+
 .scroll {
     transform: translateY(50px);
     transition-delay: .3s;
