@@ -1,0 +1,99 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Iosevka Regular';
+    display: flex;
+    background-color: var(--Text);
+    color: var(--Base);
+    font-size: 1vw;
+    flex-direction: column;
+}
+
+.parent {
+    display: grid;
+    height: calc(100% - 4px);
+    margin: 2px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+
+.image {
+    object-fit: cover;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 3 / 3;
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+}
+.div2 {
+    grid-area: 3 / 2 / 5 / 4;
+    background-color: red;
+}
+.div3 {
+    grid-area: 1 / 3 / 2 / 4;
+    background-color: white;
+}
+.div4 {
+    grid-area: 1 / 4 / 2 / 5;
+    background-color: black;
+}
+.div5 {
+    grid-area: 2 / 4 / 4 / 6;
+    background-color: green;
+}
+.div6 {
+    grid-area: 2 / 3 / 3 / 4;
+    background-color: grey;
+}
+.div7 {
+    grid-area: 1 / 5 / 2 / 6;
+    background-color: purple;
+}
+.div8 {
+    grid-area: 5 / 3 / 6 / 4;
+    background-color: yellow;
+}
+.div9 {
+    grid-area: 5 / 2 / 6 / 3;
+    background-color: orange;
+}
+.div10 {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: teal;
+}
+.div11 {
+    grid-area: 4 / 1 / 5 / 2;
+    background-color: aqua;
+}
+.div12 {
+    grid-area: 5 / 1 / 6 / 2;
+    background-color: royalblue;
+}
+.div13 {
+    grid-area: 4 / 4 / 6 / 7;
+    background-color: tan;
+}
+.div14 {
+    grid-area: 1 / 6 / 2 / 7;
+    background-color: gold;
+}
+.div15 {
+    grid-area: 2 / 6 / 3 / 7;
+    background-color: cyan;
+}
+.div16 {
+    grid-area: 3 / 6 / 4 / 7;
+    background-color: lightpink;
+}
