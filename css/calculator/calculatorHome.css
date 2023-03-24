@@ -34,18 +34,6 @@
 }
 
 
-.content>a:visited,
-.content>a:link {
-    color: var(--Crust);
-    text-decoration: underline;
-}
-
-.content>a:visited:hover,
-.content>a:link:hover {
-    color: var(--Crust);
-    text-decoration: none;
-}
-
 #designLinkCont {
     margin: 7.5vw;
     display: flex;

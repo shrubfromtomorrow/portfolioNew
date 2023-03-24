@@ -34,8 +34,8 @@
                 <div id="designSum">The design of my calculator project.</div>
             </div>
             <div id="project">
-                <div id="intro" class="header scroll">Reresearching</div>
-                <div id="introDesc" class="content scroll">
+                <div class="header scroll">Reresearching</div>
+                <div class="content scroll">
                     So, now knowing what it was I was going to do to try and
                     solve this issue, I needed to complete a second phase of
                     research where I pull pieces of information together on how
@@ -45,13 +45,13 @@
                     be put into any hardware would be a success to me.
                     <br /><br />
                     I quickly decided to use a JavaScript framwork called
-                    Electron. Anyone who has written an application will groan
-                    at seeing that. Electron allows me to effectively create a
-                    website that runs locally. This is great for a few reasons,
-                    the largest of which is that I know how to create the
-                    content, scripts, and most importantly, the styling. I say
-                    styling is the most important because I knew I was going to
-                    create a proof of concept, not a full product and how it
+                    Electron. Anyone who has written a desktop application will
+                    groan at seeing that. Electron effectively allows me to
+                    create a website that runs locally. This is great for a few
+                    reasons, the largest of which is that I know how to create
+                    the content, scripts, and most importantly, the styling. I
+                    say styling is the most important because I knew I was going
+                    to create a proof of concept, not a full product and how it
                     looks will be the thing most people will notice. The main
                     disadvantage of Electron is that it is terrible in the
                     performance department as it is basically a web browser. It
@@ -99,7 +99,7 @@
                     "2/3" is called infix notation and I wanted it to be
                     displayed as what I will call readable notation. I also
                     wanted to have responsive graph input, meaning that as you
-                    input more and more to your function, the funciton is
+                    input more and more to your function, the function is
                     evaluated with each keystroke and if it is valid, it is
                     graphed.<br />
                     Basically, I wanted to copy a few of the features of Desmos.
@@ -107,6 +107,36 @@
                     pretty much figured out and I would be naïve to not take
                     inspiration.
                 </div>
+                <div class="header scroll">Programming</div>
+                <div class="content scroll">
+                    And so now came the time of developing. All of the code and
+                    its slow development can be witnessed in the commit messages
+                    of my
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://github.com/shrubfromtomorrow/SeniorProject"
+                        >github</a
+                    >
+                    repository. For responsive math input, what better solution
+                    than exactly the one that Desmos uses? I use a library
+                    called
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="http://mathquill.com/"
+                        >MathQuill</a
+                    >
+                    which has heaviliy modified HTML input boxes to allow them
+                    extended capabilities. I also use a library called <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://arthanzel.github.io/evaluatex/"
+                    >Evaluatex</a
+                >
+                    to evaluate the outputted LaTeX expressions from MathQuill.
+                </div>
+                
             </div>
 
             <div id="footer"></div>
