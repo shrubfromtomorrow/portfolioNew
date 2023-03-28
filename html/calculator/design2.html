@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Design 2</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../../css/cssReset.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+        <link rel="stylesheet" href="../../css/prism-nord.css" />
+        <link rel="stylesheet" href="../../css/calculator/design2.css" />
+    </head>
+    <body>
+        <div id="content">
+            <div id="topbar">
+                <div id="name">Orion<br />Andrews</div>
+                <div id="navbar">
+                    <a href="../home.html">Home</a>
+                    <span>|</span>
+                    <a href="../work.html">Work</a>
+                    <span>|</span>
+                    <a>About</a>
+                </div>
+            </div>
+            <div id="designGreetCont">
+                <div id="designGreet">
+                    The <br />
+                    Design <br />
+                    <br />
+                    <span>2</span>
+                </div>
+                <div id="designSum">
+                    The continued design of my calculator project.
+                </div>
+            </div>
+            <div id="project">
+                <div class="header scroll">Code</div>
+                <div class="content scroll">
+                    I encountered a lot of problems over time with the design of
+                    the software for my calculator. I did, and still continue
+                    to, program with features in mind rather than basic
+                    principles. This was also my first real rodeo trying to make
+                    an Electron app. Thankfully, my code does not touch the IPC
+                    capabilities of Electron and so I did not really have to
+                    spend time doing anything other than making a webapp, that
+                    just so happened to run natively. <br /><br />
+                    The first struggle was figuring out how I was going to take
+                    math input. I talked about this earlier, but it was quite a
+                    struggle early on. I started by trying to use the standard
+                    HTML input boxes as you can see in the first couple images
+                    of the regular calculator gif that you can see on the
+                    previous page. This was a horrible idea. Firstly, it would
+                    be incredibly difficult to make any responsive math input,
+                    an instant deal breaker, secondly the output of these input
+                    boxes would be tough to turn into an easily parseable
+                    format, thirdly and finally, keeping track of inputs and
+                    using a middleman to make something like alt+p mean pi would
+                    be much more difficult.<br /><br />
+                    So I quickly switched to MathQuill. MathQuill is relatively
+                    easy to use, you just load the mathquill.js file in a script
+                    tag of your HTML file before your regular js file and you
+                    can simply instantiate a MathQuill input box using the
+                    MQ.MathField function on a regular HTML element. <br />
+                    <pre><code class="language-html">&lt;p&gt;&lt;span id="answer"&gt;x=&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+    var answerSpan = document.getElementById('answer');
+    var answerMathField = MQ.MathField(answerSpan, {
+        handlers: {
+            edit: function() {
+                // .latex() to get entered math in LaTeX format
+                var enteredMath = answerMathField.latex();
+                checkAnswer(enteredMath);
+            }
+        }
+    });
+&lt;/script&gt;</code></pre>
+                    Note: all of this demo code is taken from the MathQuill
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="http://docs.mathquill.com/en/latest/Getting_Started/"
+                        >documentation</a
+                    >.<br />
+                    This was great, I started with using the static function to
+                    test that the library was loaded correctly and then I moved
+                    the dynamic box shown above. Here was where I started being
+                    a bit of an idiot. I decided that now was the time to figure
+                    out how to get my input from those boxes. I was unfathomably
+                    naïve and I only thought of MathQuill as a way to style my
+                    input and so I completely ignored the documenation and I
+                    spent a week writing code to check the users most recent
+                    inputs, complete SEPARATE from my input boxes. I was
+                    effectively polling for a new input and keeping that recent
+                    input in an array behind the scenes. None of you deserve to
+                    have to look at that code and so I won't add it. <br />
+                    <br />
+                    Needless to say, I figured out what I was doing was a bad
+                    idea and I happened to notice the neat little .latex()
+                    function in the demo I showed above. Even more important
+                    were the built-in handlers to a MathQuill object. One of
+                    which you can see above, edit, and one you cannot see,
+                    enter. These are pieces of code that would be executed on
+                    the edit and enter of a MathQuill object. There were also
+                    tonnes more API methods in the documentation. Things like
+                    executing a keystroke, entering a LaTeX command, and of
+                    course, getting the current value of the input box in LaTeX
+                    form.<br /><br />
+                    This was super cool, but now I needed to do something with
+                    that outputted LaTeX, it would be a pretty rubbish
+                    calculator if it just showed you what you inputted. So,
+                    along came the source of most of my development pain,
+                    Evaluatex. I really don't want this to be put-down on the
+                    developer of Evaluatex (who will likely never read this) as
+                    Evaluatex is crazy awesome, it just has some annoying
+                    quirks. <br/>
+                    Anyways, Evaluatex evaluates LaTeX. You use it quite simply, 
+                </div>
+            </div>
+
+            <div id="footer"></div>
+        </div>
+        <script src="../../js/prism.js"></script>
+        <script src="../../js/work.js"></script>
+    </body>
+</html>

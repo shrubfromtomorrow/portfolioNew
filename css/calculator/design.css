@@ -1,6 +1,6 @@
 #designGreetCont {
     margin-top: 22vh;
-    margin-bottom: 36vh;
+    margin-bottom: 4.5vh;
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -18,6 +18,13 @@
     /* text-shadow: -.175rem .175rem var(--Text); */
 }
 
+#designGreet>span {
+    color: var(--Text);
+    font-family: "Iosevka Thin";
+    display: flex;
+    justify-content: center;
+}
+
 #designSum {
     animation-name: loadIn;
     animation-duration: 1s;
@@ -31,6 +38,59 @@
 #project {
     background-color: var(--Text);
     color: var(--Base);
+}
+
+#gifs {
+    display: flex;
+    flex-direction: row;
+    margin: 5rem;
+    justify-content: space-between;
+}
+
+#calcGifCont {
+    display: flex;
+    width: 47%;
+}
+
+#calcGif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#graphGifCont {
+    display: flex;
+    width: 47%;
+}
+
+#graphGif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#design2LinkCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+#design2Link {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+#design2Link:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
 }
 
 #footer {
