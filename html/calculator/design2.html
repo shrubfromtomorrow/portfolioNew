@@ -117,8 +117,147 @@
                     Evaluatex. I really don't want this to be put-down on the
                     developer of Evaluatex (who will likely never read this) as
                     Evaluatex is crazy awesome, it just has some annoying
-                    quirks. <br/>
-                    Anyways, Evaluatex evaluates LaTeX. You use it quite simply, 
+                    quirks. <br />
+                    Anyways, Evaluatex evaluates LaTeX. You use it quite simply,
+                    just call the function on some LaTeX expression.
+                    <pre><code class="language-js">let fn = evaluatex(latestInput.toString());
+let result = +fn().toFixed(10);</code></pre>
+                    In this case, the LaTeX expression is latestInput, fn is
+                    sort of an intermediary step where you can pass arguments
+                    into fn({args}) before finally storing the result in a
+                    variable, in this case result.<br /><br />
+                    Now what about those pains I have with Evaluatex? Well, the
+                    biggest of all of them is that some of the constants that
+                    you are supposed to be able to evaluate, are not congruent
+                    with actual LaTeX.<br />
+                    For example, in LaTeX, to represent the symbol π, you would
+                    express it with \pi. The backslash is a delimiter that takes
+                    the LaTeX parsing out of its normal flow to tell it you are
+                    doing something special (something that isn't a normal
+                    number), and pi is just the way π is represented. Evaluatex
+                    represents π with PI. This is annoying but reasonably easy
+                    to fix by adding in a middleman that replaces all \pi
+                    outputted by MathQuill with the PI that Evaluatex requires.
+                    However, this breaks when you try to go for the same
+                    approach with another misrepresented constant, e (euler's
+                    number). e is represented with a lowercase e in mathematics,
+                    it's just the standard, in LaTeX hoever, e is represented
+                    with an uppercase E. The problem with trying to replace all
+                    'e' with 'E' is that some symbols in LaTeX are represented
+                    with a word.<br />
+                    For example, here is a small expression that I cooked up:
+                    \left(\frac{4^2}{6}\right). This reads as (4^2/6) but
+                    parenthesis are represented with "\left". Replacing all 'e'
+                    with 'E' would break this expression. There might be a way
+                    around this involding making sure all characters are
+                    lowercase in the expression, but I haven't implemented it,
+                    I'm just talking about some pains I have with Evaluatex.<br /><br />
+                    Another set of challenges I encountered were in the graphing
+                    department. Creating a graph is simple, you just loop
+                    through a bunch of x coordinates and draw lines down the
+                    height of the page at a certain interval. You then do the
+                    same thing, but with the y coordinates, drawing lines every
+                    certain interval across the width of the page (making sure
+                    it is the same pixel interval as you draw line vertically so
+                    you get square boxes). It might look something like this:
+                    <div id="gridCont">
+                        <img
+                            id="grid"
+                            src="../../assets/images/grid.png"
+                            alt=""
+                        />
+                    </div>
+                    You might see something off about this though. The lines are
+                    incredibly blurry. "Why does this happen?" you might ask,
+                    well, I have drawn a handy-dandy diagram to explain it:
+                    <div id="pixelsCont">
+                        <img
+                            id="pixels"
+                            src="../../assets/images/pixels.png"
+                            alt=""
+                        />
+                    </div>
+                    Basically, JS has one coordinate system that you can use
+                    that is defined by the size of the canvas element in HTMl
+                    (HTML5 canvas allows for simple pixel manipulation and is
+                    what I use for my graphing) but it might not necessarily be
+                    the same as the one your screen uses. In this example, I
+                    might draw a line of width 2 starting at y=1 and having
+                    length 5. While those seem like nice numbers, the JS pixel
+                    at y=2 will not be likely to sit exactly on a pixel border
+                    on your screen. This causes some guesswork to occur. Pixels
+                    on your screen will have to snap to the nearest pixel that
+                    could feasibly represent a line at y=2. As in my example,
+                    the line is actually halfway between two pixels on the
+                    screen grid, half of the pixels would be snap to the pixel
+                    above, and half would stay at the midpoint. <br />
+                    The more closely your JS pixel grid matches the one of you
+                    screen, the less blurring there will be. <br />
+                    This caused me a lot of angst for a long time. The solution
+                    ends up being something like this:
+                    <pre><code class="language-js">let ctx = canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+
+// Set display size (css pixels).
+let sizeX = canvasCont.getBoundingClientRect().width;
+let sizeY = canvasCont.getBoundingClientRect().height;
+
+canvas.style.width = sizeX + "px";
+canvas.style.height = sizeY + "px";
+// Set actual size in memory (scaled to account for extra pixel density).
+let scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+canvas.width = sizeX * scale;
+canvas.height = sizeY * scale;
+// Normalize coordinate system to use css pixels.
+ctx.scale(scale, scale);</code></pre>
+                    This basically takes the canvas (getContext does some othe
+                    stuff to it but we don't care) and stores it in a variable
+                    called ctx. It then gets and sets the CSS size of the canvas
+                    to what the actual size of the canvas is and checks the
+                    pixel ratio of the screen. It then scales up the sizes
+                    defined earlier with respect to the scale of the screen and
+                    sets that to the height and width we will use in JS. This is
+                    the most important step because scaling with respect to the
+                    device pixel ratio is what will keep the JS pixel map right
+                    on top of the screen one. You can see the blurry-less lines
+                    in the gif on the last page.<br /><br />
+                    So now you have a good looking grid and you want to start to
+                    draw a function. Well now comes the tough part. (0, 0) is
+                    most often in the middle of the page as it allows for the
+                    most context to bee viewed for the most graphs, but what is
+                    (0, 0)? In the JS pixelgrid, (0, 0) is not in the middle of
+                    the screen, it is in the top left. So now you have to
+                    redefine a coordinate system with some common calculations.
+                    For example, to plot a point at (-8, 0), you would need to
+                    half the width of the page, half the height of the page, and
+                    then subtract 8 from the x-value and plot it. <br />
+                    Great, now just set your half-page-height and
+                    half-page-width to some common variables and you can base
+                    everything around the center of the screen. "But wait!",
+                    those grid lines you just plotted are several tens of pixels
+                    apart, maybe hundreds if the screen is large enough! If you
+                    plot a line that is 8 less than the center of the screen,
+                    that will be 8 PIXELS less than the center. You have to
+                    scale all of your x and y pixel values by some common scalar
+                    so that they align with with the grid you have drawn.<br />
+                    And with that, you should be able to draw a function. Just
+                    plug in a bunch of numbers for x, calculate the coordinates
+                    and scale them to fit your graph.<br /><br />
+                    "But wait!" you may say, "How many should I draw?" you may
+                    ask. Well, why not start with 10000? That's quite a lot and
+                    will have good aliasing for any person with a sane
+                    screensize. You could also draw lines between each point you
+                    draw to make the function, you know, continuous."But wait!"
+                    you might say, "Aren't you running this on a little
+                    raspberry pi?" you might ask. And you'd be right, having a
+                    flat number of points to calculate is an awful idea, lets
+                    make it have a maximum of the total width of the screen,
+                    divided by that arbitrary scale factor from earlier (this
+                    was completely random but works quite well), the only time
+                    that would fail is when your graph has some absurd slope
+                    like 100000000x, at which point, a scale of x = -10 to 10 is
+                    not going to be of much use.
+                    SEGUE WITH "SO NOW YOU CAN" AND TALK ABOUT ASYMPTOTE DETECTION AND CANVAS BEING JUST A DUMB PIXEL GRID
                 </div>
             </div>
 
