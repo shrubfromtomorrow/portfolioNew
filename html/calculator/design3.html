@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Design 3</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../../css/cssReset.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+        <link rel="stylesheet" href="../../css/prism-nord.css" />
+        <link rel="stylesheet" href="../../css/calculator/design2.css" />
+    </head>
+    <body>
+        <div id="content">
+            <div id="topbar">
+                <div id="name">Orion<br />Andrews</div>
+                <div id="navbar">
+                    <a href="../home.html">Home</a>
+                    <span>|</span>
+                    <a href="../work.html">Work</a>
+                    <span>|</span>
+                    <a>About</a>
+                </div>
+            </div>
+            <div id="designGreetCont">
+                <div id="designGreet">
+                    The <br />
+                    Design <br />
+                    <br />
+                    <span>3</span>
+                </div>
+                <div id="designSum">
+                    The design of the hardware for my calculator.
+                </div>
+            </div>
+            <div id="project">
+                <div class="header scroll">Hardware</div>
+                <div class="content scroll">
+                    Hardware was the area where I had the most iterations of
+                    various parts of my calculator. This is where I designed the
+                    case, keyboard, and the display and compute unit
+                    configuration. Most of this is about the keyboard as it took
+                    the longest, the other aspects of the design were really
+                    just rote iteration.<br /><br />
+                </div>
+                <div class="content scroll">
+                    The hardware design began when a screen I ordered on Amazon
+                    arrived and I could begin to test how it fit with my
+                    Raspberry Pi. It fit perfectly on top (as it should) and
+                    even came with a heatsink for the CPU of the Raspberry Pi
+                    and an active fan for cooling over the rest of the board,
+                    more than I needed but a nice touch nonetheless. The screen
+                    had a 3.5 inch diagonal and a 480x320 resolution, more than
+                    necessary but again, a nice touch. The biggest issue that I
+                    could see right away was the thickness. The screen stacked
+                    on top of the already bulky Raspberry Pi lead to a thickness
+                    of 22mm. That doesn't sound like a lot but it is not
+                    comfortable to hold in your hand and bothered me from the
+                    start.<br />
+                    Raspberry Pi started the screen in 1920x1080 for some reason
+                    and so (while it was nearly illegible) I went to change the
+                    resolution settings. 480x320 is not widely supported and so
+                    I did not find it as possible display output mode on the
+                    Raspberry Pi, a small setback but I could work through it.
+                    In general 3:2 aspect ratios are not commonly supported but
+                    there was a 720x480 resolution that I could use. I wanted to
+                    use a display output that maintains the same aspect ratio as
+                    the display so as to reduce blurriness.<br />
+                    The next time that I rebooted the Raspberry Pi, the display
+                    settings didn't stick. I thought it might have been a
+                    configuration issue and so I tried again to no avail.
+                    <br /><br />
+                </div>
+                <div class="content scroll">
+                    This was when I started to get frustrated. I then decided to
+                    go outside of the configuration menu that Raspberry Pi OS
+                    gives you and I went to change the properties I wanted to
+                    change through the command line. Raspbian (Raspberry Pi OS)
+                    is a Linux distribution and so I knew that I would be able
+                    to change display properties through a common command called
+                    xrandr. I don't want to get into display managers and
+                    general Linux-y stuff here becuase this isn't the sort of
+                    project for it but I wanted to mention how I could change
+                    the resolution.<br />
+                    Of course, this also didn't stick. Now I was pretty mad. I
+                    knew that somewhere there was a configuratino file that was
+                    overwriting my changes on boot but I couldn't figure it out.
+                    I then went looking for an autoexec file. These are files
+                    that have commands that get executed when different parts of
+                    the OS come into use. In Linux, there are a lot. bash.rc,
+                    the init.d directory, and rc.local are the main ones are
+                    Raspbian. I put my commands in a bash.rc and then they
+                    worked on boot, hooray.<br /><br />
+                </div>
+                <div class="content scroll">
+                    Now I could get to putting my code onto the Rasberry Pi.
+                    This was actually incredibly easy, I just made an SSH
+                    connection with the Raspberry Pi and used a command called
+                    rsync to copy the code over.<br />
+                    There was an issue though. The source code would work fine
+                    on the Raspberru Pi, but there were a lot of different
+                    configurations in Electron that would not work on the
+                    Raspberry Pi. The foremost of these is that the Raspberry Pi
+                    CPU architecture is ARM, not the x86 architechture that I
+                    was developing for on my laptop. In conjunction with this,
+                    the Raspberry Pi didn't even have Electron installed, or
+                    even Node (the framework that runs Electron). This was
+                    itself a debacle to fix but it was really just about
+                    executing the right commands, so I won't talk about it here.
+                    Now with Electron and Node installed, I was able to run
+                    commands to build my software for ARM. I got my executable
+                    and it ran perfectly the first time. There's no joke, it
+                    actually just worked.<br/><br/>
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+        <script src="../../js/prism.js"></script>
+        <script src="../../js/work.js"></script>
+    </body>
+</html>

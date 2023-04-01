@@ -68,6 +68,54 @@ code {
     object-fit: cover;
 }
 
+#asymptotesCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#asymptotes {
+    width: 100%;
+    height: 47%;
+    object-fit: cover;
+}
+
+#activeElementCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#activeElement {
+    width: 100%;
+    height: 47%;
+    object-fit: cover;
+}
+
+#design3LinkCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+#design3Link {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+#design3Link:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
+}
+
 #footer {
     background-color: var(--Text);
     position: relative;
