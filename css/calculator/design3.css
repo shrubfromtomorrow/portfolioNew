@@ -44,9 +44,29 @@ code {
     font-size: 1vw;
 }
 
+#switchCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
+#switch {
+    width: 50%;
+    height: 47%;
+    object-fit: cover;
+}
 
+#solderingCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
+#soldering {
+    width: 50%;
+    height: 47%;
+    object-fit: cover;
+}
 
 #footer {
     background-color: var(--Text);

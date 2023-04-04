@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../../css/cssReset.css" />
         <link rel="stylesheet" href="../../css/default.css" />
         <link rel="stylesheet" href="../../css/prism-nord.css" />
-        <link rel="stylesheet" href="../../css/calculator/design2.css" />
+        <link rel="stylesheet" href="../../css/calculator/design3.css" />
     </head>
     <body>
         <div id="content">
@@ -115,7 +115,99 @@
                     Now with Electron and Node installed, I was able to run
                     commands to build my software for ARM. I got my executable
                     and it ran perfectly the first time. There's no joke, it
-                    actually just worked.<br/><br/>
+                    actually just worked.<br /><br />
+                </div>
+                <div class="content scroll">
+                    Now with the software on my Raspberry Pi, I edited my
+                    bash.rc to automatically start executing my calculator
+                    program on start and I was good to go. I plugged in a
+                    keyboard and I was able to use the calculator for the first
+                    time in an enclosed environment (in a software sens). The
+                    feeling of gratification that I now had a system that was
+                    designed to do one thing was immeasurable.<br />
+                    But then I had to move on to more pressing issues. I
+                    couldn't have a convincing calculator demo if the keyboard
+                    was 8 times larger than the Rasberry Pi and just plugged
+                    into a USB port, I needed to make my own. I had had some
+                    experience with mechanical keyboards in the past and I was
+                    drawn to them. I knew that it would be bulky but I had hope
+                    that I could create one that was only in excess size of the
+                    Rasberry Pi + screen combo in terms of length (that is to
+                    say, it would be smaller in every way except the edge that
+                    protrudes towards the user).<br />
+                    I quickly decided that the best-sized keyboard layout would
+                    be a 4x6 (4 columns, 6 rows). It would allow my the right
+                    number of keys to perform all of the keystrokes I thought
+                    would be necessary for a good demo (with some mod keys).
+                    However, I had an issue: keyboard PCBs in 4x6 don't exist.
+                    The closest I would be able to get would sacrifice 3 keys by
+                    extending the 0, enter, and plus symbol. So, I needed to
+                    make my own, or so I thought. <br />
+                </div>
+                <div class="content scroll">
+                    There are a couple of tutorials on the internet for creating
+                    your own keyboard PCB and many more for general PCB design.
+                    I spent a week having a look around and gather information
+                    on the commonalities between multiple tutorials. I figured
+                    that would give me a good understanding of the right
+                    software to use and the right general practices for PCB
+                    design. While this was ultimately fruitless as I realized it
+                    would take far too long for far too little, it did teach me
+                    an important concept in regards to the way that keyboards
+                    work electrically.<br />
+                    The simplest way to get input from a keyboard would be to
+                    run a constant voltage through a wire on one side of a
+                    switch, and connect a wire to the other end of each switch,
+                    the idea being that when the switch is clicked, the circuit
+                    is completed. Here's a rough image of how that would work.
+                </div>
+                <div class="scroll" id="switchCont">
+                    <img
+                        id="switch"
+                        src="../../assets/images/switch.png"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    This would work just fine, however, with 24 switches (4x6)
+                    and 2 wires per switch, I would need 48 connections to make
+                    this keyboard work. The solution to this is to create a
+                    keyswitch matrix and it is the thing I alluded to learning
+                    about during my stint with PCB design. The way a keyswitch
+                    matrix works is pretty simple. There are two pins per
+                    switch, let's call one a column pin and one a switch pin.
+                    For all of the switches in a given column, you connect all
+                    of their column pins together, and for all of the switches
+                    in a given row, you connect all of the row switches
+                    together. Then, on the software side, you would loop through
+                    all of the rows (or columns, it doesn't matter) and pull the
+                    voltage of the row connections low. Then, you would loop
+                    through all of the columns and pull each voltage high, but
+                    then resist new voltage coming in. This effectively stops
+                    "replenishing" the voltage and allows it to be sapped away
+                    if a given column is connected to the row we just pulled
+                    low.<br />
+                    With this, in almost an instant, you can see which row and
+                    column pair has a low voltage, giving you a "coordinate" of
+                    the current switch. This is complex to describe verbally so
+                    I will add another diagram in a bit. Anyways, the point is,
+                    I figured that I could make a switch matrix without a PCB to
+                    anchor it all in. I had a look on the internet and it turns
+                    out that this is actually quite common and the resulting
+                    product is called a handwired keyboard. There are many great
+                    videos on how to create a handwired keyboard but the process
+                    is really just to create a key matrix that exists outside of
+                    a PCB. Here is the diagram I mentioned I would show (spoilers, this is the back of the keyboard I made for my design exhibition and around the 5th iteration).
+                </div>
+                <div class="scroll" id="solderingCont">
+                    <img
+                        id="soldering"
+                        src="../../assets/images/soldering.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    
                 </div>
             </div>
             <div id="footer"></div>
