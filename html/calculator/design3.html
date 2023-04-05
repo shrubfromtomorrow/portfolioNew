@@ -17,25 +17,27 @@
     </head>
     <body>
         <div id="content">
-            <div id="topbar">
-                <div id="name">Orion<br />Andrews</div>
-                <div id="navbar">
-                    <a href="../home.html">Home</a>
-                    <span>|</span>
-                    <a href="../work.html">Work</a>
-                    <span>|</span>
-                    <a>About</a>
+            <div id="frontPage">
+                <div id="topbar">
+                    <div id="name">Orion<br />Andrews</div>
+                    <div id="navbar">
+                        <a href="../home.html">Home</a>
+                        <span>|</span>
+                        <a href="../work.html">Work</a>
+                        <span>|</span>
+                        <a>About</a>
+                    </div>
                 </div>
-            </div>
-            <div id="designGreetCont">
-                <div id="designGreet">
-                    The <br />
-                    Design <br />
-                    <br />
-                    <span>3</span>
-                </div>
-                <div id="designSum">
-                    The design of the hardware for my calculator.
+                <div id="designGreetCont">
+                    <div id="designGreet">
+                        The <br />
+                        Design <br />
+                        <br />
+                        <span>3</span>
+                    </div>
+                    <div id="designSum">
+                        The design of the hardware for my calculator.
+                    </div>
                 </div>
             </div>
             <div id="project">
@@ -159,7 +161,8 @@
                     run a constant voltage through a wire on one side of a
                     switch, and connect a wire to the other end of each switch,
                     the idea being that when the switch is clicked, the circuit
-                    is completed. Here's a rough image of how that would work.
+                    is completed. Here's a rough image of how that would
+                    work.<br /><br />
                 </div>
                 <div class="scroll" id="switchCont">
                     <img
@@ -169,6 +172,7 @@
                     />
                 </div>
                 <div class="content scroll">
+                    <br />
                     This would work just fine, however, with 24 switches (4x6)
                     and 2 wires per switch, I would need 48 connections to make
                     this keyboard work. The solution to this is to create a
@@ -197,17 +201,187 @@
                     product is called a handwired keyboard. There are many great
                     videos on how to create a handwired keyboard but the process
                     is really just to create a key matrix that exists outside of
-                    a PCB. Here is the diagram I mentioned I would show (spoilers, this is the back of the keyboard I made for my design exhibition and around the 5th iteration).
+                    a PCB. Here is the diagram I mentioned I would show
+                    (spoilers, this is the back of the keyboard I made for my
+                    design exhibition and around the 5th iteration).
+                    <br /><br />
                 </div>
-                <div class="scroll" id="solderingCont">
+                <div class="scroll" id="solderingCurrentCont">
                     <img
                         id="soldering"
                         src="../../assets/images/soldering.jpg"
                         alt=""
                     />
+                    <img
+                        id="current"
+                        src="../../assets/images/current.jpg"
+                        alt=""
+                    />
                 </div>
                 <div class="content scroll">
-                    
+                    <br />
+                    The black pieces on each row at an intersection with a
+                    column are pieces of electrical tape to prevent current from
+                    being able to flow directly to a column from a row without
+                    having to go through a switch. <br /><br />
+                </div>
+                <div class="content scroll">
+                    Back to the narrative flow now. The first thing I would need
+                    in order to create a functioning handwired keyboard would be
+                    a switchplate (switches themselves are more important but I
+                    already had plenty of them). The switchplate would hold all
+                    of the switches together in a neat row and column alignment
+                    and would provide general structural stability to the
+                    keyboard. For most regular mechanical keyboards, these
+                    plates are made from CNC'd aluminium or polycarbonate. I
+                    didn't have access to either of those materials nor the
+                    tools needed to manufacture with them. What I did have
+                    access to were 3D printers. I got some basic measurements of
+                    the width, height, and thickness of a normal switchplate and
+                    I created my first prototype with PETG filament.
+                    <br /><br />
+                </div>
+                <div class="scroll" id="switchplate1Cont">
+                    <img
+                        id="switchplate1"
+                        src="../../assets/images/switchplate1.png"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    This worked well, the switches snapped in an took a bit of
+                    effort to get out. However, a good switchplate should
+                    require a tool to remove the switches and mine was not
+                    nearly as secure as that. The reason that switches are hard
+                    to get out is because the have a small piece of bendable
+                    plastic on their sides that locks them in place.
+                    <br /><br />
+                </div>
+                <div class="scroll" id="switch2Cont">
+                    <img
+                        id="switch2"
+                        src="../../assets/images/switch2.png"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    The switch slides into the plate and is locked in by those
+                    two notches I circled. The way to remove switches from a
+                    plate is to bend the piece of plastic above the notches so
+                    that the nothces move in towards the switch and the switch
+                    can be freely removed. <br />
+                    This is all to say that my thickness measurements were wrong
+                    and that I needed the plate I printed to be thinner because
+                    the notches on the switches weren't slipping past the plate
+                    into their locking position, making them easy to remove. The
+                    issue, however, is that the thinnest layer thickenss I could
+                    possibly print with is 0.05 mm and that would take decades
+                    to print. On top of the time an accurate print would take
+                    was the fact that using PETG meant that the switchplate was
+                    flimsy and bending it cause switches to pop out. After a few
+                    prints I decided to go a new route.
+                </div>
+                <div class="content scroll">
+                    I needed to use a better material. This was when I got lucky
+                    and my advisor recommended that I machine down a piece of
+                    hard maple that the school had lying around. This was a
+                    great option as it would remove a lot of the (physical)
+                    flexibility of 3D printed prototypes and, most importantly,
+                    could be laser cut to extreme precision.<br />
+                    The first step was to take advantage of the school shop in
+                    order to take th 2 by 4 down to a more managable size. I
+                    needed to get it to the right thickness here as the laser
+                    cutter would only be abe to help me make cuts through the
+                    thin piece of wood, not get it down to a certain thickness.
+                    I had a talk to the shop advisor about the best way to go
+                    about this and I ended up cutting slices of the wood down to
+                    around 3mm and then painstakingly putting the pieces through
+                    a planer until I had the 1.5mm I was looking for. <br />
+                    This presented a whole new problem though: the wood at that
+                    thickness would bow. This wouldn't be a problem for the
+                    laser cutter as the bow was only a millimeter or two and
+                    wouldn't cause significant warping. What would be an issue
+                    however is the fact that switches on the edges had a
+                    likelihood to pop out. This is a problem for later however.
+                </div>
+                <div class="content scroll">
+                    Next, it was time to test the laser cutter. Using some
+                    pieces of cardboard, I created some vector "art" that would
+                    place the cuts in the correct spots to create the
+                    switchplate design I wanted.
+                    <br /><br />
+                </div>
+                <div class="scroll" id="switchplate2Cont">
+                    <img
+                        id="switchplate2"
+                        src="../../assets/images/switchplate2.png"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    This took some fiddling to get right as the laser cutter was
+                    a bit unintuitive to use at first. I moved right on to
+                    creating a cut out of wood. This actually turned out really
+                    well and while it was a bit thick still, it gave me a lot of
+                    confidence that this was the right approach.<br />
+                    In the meantime however, it was time to build a keyboard. I
+                    knew that it was easier to make 3D printed switchplates than
+                    wood ones and so while they don't allow the switches to fit
+                    perfectly, they would do well as anchors for simple
+                    prototypes. The first thing I wanted to do, before any
+                    physical work, was to test to see if I could get the
+                    firmware I needed to operate the keyboard onto the
+                    microcontroller I would use for my handwired board. The
+                    easiest way to do this is with a firmware called QMK. It
+                    basically automatically interprets the voltage values I
+                    mentioned earlier and outputs them as USB signal. For this,
+                    all I needed to do was create a new QMK keymap and flash it
+                    to my Arduino Pro Micro that I was using as a
+                    microcontroller. The process was a bit annoying as defining
+                    the rows and columns and linking them to the phyiscal pins
+                    that governed said rows and columns was a bit
+                    counterintuitive, but I got it to work after a few hours. So
+                    now that the firmware was uploaded successfully, I could get
+                    onto soldering.
+                </div>
+                <div class="content scroll">
+                    I placed the switches into the cutouts of the switchplate
+                    (only doing a 3x3 board for testing) and straightened some
+                    copper wire with a power dill. I lined up the columns and
+                    rows and soldered the columns to the pins that I determined
+                    would be the column pins for each switch. I then soldered in
+                    the diodes, put electrical tape on the copper row pieces at
+                    the intersections with columns, and soldered the diodes to
+                    the rows. I had had a fair amount of experience soldering in
+                    the past, but there were new challenges with this projects,
+                    mainly in how fine-tune your movements need to be (hard for
+                    me as I have incredibly shaky hands). <br />
+                    And just like that, I had a my first keyboard. It looked
+                    like this.
+                    <br /><br />
+                </div>
+                <div class="scroll" id="keyboard1Cont">
+                    <img
+                        id="keyboard1"
+                        src="../../assets/images/keyboard1.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    Pretty bad soldering all around but it functioned on the
+                    first try. I was able to input 1-9 just as a test but I
+                    could realisitcally make any key perform any keystroke a
+                    regular keyboard can, or any combination of keystrokes, for
+                    that matter.<br /><br />
+                    This page has gone on pretty long, on the next one I will
+                    improve on this keyboard and make a case.
+                </div>
+                <div id="design4LinkCont" class="scroll">
+                    <a id="design4Link" href="design4.html">The Design 4</a>
                 </div>
             </div>
             <div id="footer"></div>

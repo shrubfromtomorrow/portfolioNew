@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Design 4</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../../css/cssReset.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+        <link rel="stylesheet" href="../../css/prism-nord.css" />
+        <link rel="stylesheet" href="../../css/calculator/design4.css" />
+    </head>
+    <body>
+        <div id="content">
+            <div id="frontPage">
+                <div id="topbar">
+                    <div id="name">Orion<br />Andrews</div>
+                    <div id="navbar">
+                        <a href="../home.html">Home</a>
+                        <span>|</span>
+                        <a href="../work.html">Work</a>
+                        <span>|</span>
+                        <a>About</a>
+                    </div>
+                </div>
+                <div id="designGreetCont">
+                    <div id="designGreet">
+                        The <br />
+                        Design <br />
+                        <br />
+                        <span>4</span>
+                    </div>
+                    <div id="designSum">
+                        The design of the hardware for my calculator.
+                    </div>
+                </div>
+            </div>
+            <div id="project">
+                <div class="header scroll">Hardware Continued</div>
+                <div class="content scroll">
+                    So to step back and reflect on where I am at in this point
+                    in the timeline: I had written the software necessary to
+                    perform the arithmetic you would expect of a scientific
+                    calculator and the graphing of a normal graphing calculator,
+                    I had created the hardware arrangement necessary to create a
+                    closed interface between my compute unit and screen, as well
+                    as created a keymap and a prototype design of a keyboard for
+                    my calculator. Now, I was moving onto a more fleshed out
+                    keyboard design.<br /><br />
+                </div>
+                <div class="content scroll">
+                    The first thing I wanted to improve over my 3x3 keyboard
+                    prototype was the soldering between the keyboard controller
+                    and the keyboard. My diode and copper wire solders were
+                    pretty decent, but the connections to the GPIO pins of my
+                    Arduino were atrocious. I figured that the cleanest way to
+                    improve would be to use jumper cables that slide right onto
+                    the GPIO headers I had installed. This would also make
+                    debugging easier in the event of a misplace wire.<br />
+                    I also wanted to scale this up to a 6x4 design, which as you
+                    can see in the next image, I did. <br /><br />
+                </div>
+                <div class="scroll" id="keyboardsCont">
+                    <img
+                        id="keyboard2"
+                        src="../../assets/images/keyboard2.jpg"
+                        alt=""
+                    />
+                    <img
+                        id="keyboard3"
+                        src="../../assets/images/keyboard3.png"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    As you can see here, the soldering is much neater and while
+                    the jumper cable connections to the copper are garbage, they
+                    are secure. You can also see that the connections into the
+                    Arduino are much cleaner. Here I made my first prototype of
+                    the keymap I would use for my design exhibition. It was
+                    really simple with numbers, arithmetic operators, graph and
+                    function input buttons, and some constants. I made sure to
+                    leave room for mod buttons that would allow access to other
+                    layers and functions. <br />
+                    This was also when I realized that the connections I made
+                    from the Arduino to the copper rows and columns did not need
+                    to be at the ends, they could be anywhere along a row or
+                    column. This was incredibly important as it would allow me
+                    to cut down on the overall form factor of the keyboard in
+                    the final build. <br /><br />
+                </div>
+                <div class="content scroll">
+                    This was also the time when I got a special delivery. I had
+                    looked around a few weeks earlier on the internet for some
+                    low profile keyswitches and keycaps and found that they were
+                    a semi-common thing. They arrived and were exactly what I
+                    wanted them to be, but before I made a final keyboard with
+                    the new switches, I wanted to test another method of wiring
+                    to the Arduino that I thought could save some space. <br />
+                    <br />
+                </div>
+                <div class="scroll" id="keyboards2Cont">
+                    <img
+                        id="keyboard4"
+                        src="../../assets/images/keyboard4.jpg"
+                        alt=""
+                    />
+                    <img
+                        id="keyboard5"
+                        src="../../assets/images/keyboard5.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    The wiring may look like an affront to some deity, but it
+                    serves to demonstrate an idea that I was toying with. By
+                    measuring cables to more specific lengths and cutting down
+                    on excess, I could further improve the form factor of the
+                    keyboard. As you can see from the second image, the
+                    connections take up no more space than the copper wires
+                    themselves do. Now, from looking at this, you might think I
+                    lied about my discovery that the wires to the Arduino can be
+                    connected anywhere along the rows or columns as I connect
+                    these wires to the ends still, but that is not the case, I
+                    was simply using a flimsier wire (a dissected Cat 5 ethernet
+                    cable) and so I wanted to be able to wrap it around the wire
+                    for more stability while soldering, something that is hard
+                    to do in the middle of the copper wires. <br />
+                    <br />
+                </div>
+                <div class="content scroll">
+                    And now we come to the final keyboard build. I placed the
+                    switches into a switchplate with some keycaps on just to
+                    test the general fitting and realized that there was a gap
+                    of about 2mm between each switch. That would add up when
+                    there were 6 rows and 4 columns. I created a new CAD design
+                    of a switchplate to implement the new dimensions and printed
+                    it to test the switches. 
+                    TALK ABOUT CREATING NEW WOOD SWITCHPLATE 
+                </div>
+            </div>
+
+            <div id="footer"></div>
+        </div>
+        <script src="../../js/prism.js"></script>
+        <script src="../../js/work.js"></script>
+    </body>
+</html>

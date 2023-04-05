@@ -1,9 +1,14 @@
+#frontPage {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
 #designGreetCont {
     display: flex;
     flex-grow: 1;
     align-items: center;
 }
-
 
 #designGreet {
     animation-name: loadIn;
@@ -38,57 +43,45 @@
     color: var(--Base);
 }
 
-#gifs {
+#keyboardsCont {
     display: flex;
-    flex-direction: row;
-    margin: 5rem;
-    justify-content: space-between;
-}
-
-#calcGifCont {
-    display: flex;
-    width: 47%;
-}
-
-#calcGif {
     width: 100%;
-    height: 100%;
+    justify-content: space-evenly;
+}
+
+#keyboard2 {
+    width: 35%;
+    height: 47%;
     object-fit: cover;
 }
 
-#graphGifCont {
-    display: flex;
-    width: 47%;
-}
-
-#graphGif {
-    width: 100%;
-    height: 100%;
+#keyboard3 {
+    width: 35%;
+    height: 47%;
     object-fit: cover;
 }
 
-#design2LinkCont {
-    margin: 7.5vw;
+#keyboards2Cont {
     display: flex;
-    justify-content: center;
-    font-size: 2vw;
-    color: var(--Base);
-    background-color: var(--Text);
-    transition: all 0.25s ease;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
-#design2Link {
-    color: var(--Base);
-    background-color: var(--Text);
-    transition: all 0.25s ease;
-    padding: 1vw;
-    border: 1px solid var(--Text);
-    border-radius: 0.5rem;
+#keyboard4 {
+    width: 35%;
+    height: 47%;
+    object-fit: cover;
 }
 
-#design2Link:hover {
-    cursor: pointer;
-    border: 1px solid var(--Base);
+#keyboard5 {
+    width: 35%;
+    height: 47%;
+    object-fit: cover;
+}
+
+
+code {
+    font-size: 1vw;
 }
 
 #footer {

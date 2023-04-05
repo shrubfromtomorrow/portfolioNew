@@ -122,6 +122,12 @@ body {
     flex-direction: column;
 }
 
+#frontPage {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
 #topbar {
     font-family: "Iosevka Regular";
     display: flex;
