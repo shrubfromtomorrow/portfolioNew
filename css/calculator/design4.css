@@ -79,6 +79,42 @@
     object-fit: cover;
 }
 
+#humungulatorCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#humungulator {
+    width: 35%;
+    height: 47%;
+    object-fit: cover;
+}
+
+#keyboard6Cont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#keyboard6 {
+    width: 35%;
+    height: 47%;
+    object-fit: cover;
+}
+
+#calculatorCont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#calculator {
+    width: 35%;
+    height: 47%;
+    object-fit: cover;
+}
+
 
 code {
     font-size: 1vw;

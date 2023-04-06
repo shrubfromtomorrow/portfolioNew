@@ -142,8 +142,196 @@
                     of about 2mm between each switch. That would add up when
                     there were 6 rows and 4 columns. I created a new CAD design
                     of a switchplate to implement the new dimensions and printed
-                    it to test the switches. 
-                    TALK ABOUT CREATING NEW WOOD SWITCHPLATE 
+                    it to test the switches. The switche fit flushly and so I
+                    ran with the new dimensions and created a new wood
+                    switchplate in Illustrator. The switches fit very well into
+                    the wood as well though there was quite a bow to the wood. I
+                    will admit that this is when I made a bit of a mistake. I
+                    put the switches into the keyboard such that the outer one
+                    were able to come out. The wood bent away from the center
+                    switches. This meant that though I had planned to use the
+                    copper wires to add stabilitiy and prevent switches from
+                    falling out, it was not nearly as effective as the copper
+                    added constraining force in the direction of the bow rather
+                    than opposite the bow. This small oopsie is really the only
+                    thing that truly bothers me about the whole design of that
+                    calculator prototype. <br />
+                    I now had the copper placed in and I soldered all of the
+                    switches to their respective columns, tinned the switches
+                    for their diodes, soldered the diode, taped the rows, and
+                    finally soldered the diodes to the rows. I trimmed the
+                    copper down so that there was no excess past the form factor
+                    of the switchplate. Next came probably the most important
+                    decision: how to wire from the keyboard to the Arduino. I
+                    will take a pause in the keyboard department here as the
+                    final decision of how to wire the keyboard to the Arduino is
+                    almost entirely dependant on the case design I had been
+                    doing for several weeks now. <br />
+                    <br />
+                </div>
+                <div class="content scroll">
+                    The case started out pretty simple, I needed a space to hold
+                    my keyboard assembly and a space to hold my Raspberry Pi and
+                    screen. I would also need some place to run the USB
+                    interface from the Arduino to my Raspberry Pi. I started by
+                    taking some measurements and I created a first prototype in
+                    CAD. I decided to situate the Arduino for the keyboard in
+                    the bottom of the case as it was the area where I had the
+                    most space to cut into as the difference between the
+                    thickness of the Rasberry Pi and the keyboard itelf was
+                    large and left a 11mm gap between the bottom of the keyboard
+                    and the bottom of the case. I sliced the first design for
+                    the school 3D printers with 5% infill and .3mm layers. These
+                    were the lowest detail and lowest fill settings I could
+                    slice with and the print was still 5 hours long. Once it
+                    finished, the dimensions were completely wrong. I still have
+                    no idea how I got the screen measurements so wrong but the
+                    keyboard dimensions so accurate. Here is a picture of the
+                    humungulator (as I have dubbed it). <br />
+                    <br />
+                </div>
+                <div class="scroll" id="humungulatorCont">
+                    <img
+                        id="humungulator"
+                        src="../../assets/images/humungulator.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    For reference of size, the wingspan of my hand like that is
+                    around 6 inches. The main culprit of the width is that I had
+                    the screen width dimension I based all of this around was
+                    too large, though you can see that the switchplate I used
+                    fit perfectly. The impurities in the print (the little brown
+                    flecks) were also annoying but managable. You can also see
+                    the cutout in the bottom of the case for the Arduino and the
+                    cable passthrough to the Raspberry Pi, this would eventually
+                    be scrapped for a more homemade look with a cable poking out
+                    the side (I say this like it was anything but a
+                    convenience). <br />
+                    Needless to say, this would not cut it. I fixed up the
+                    dimensions and the dimensions of the cable passthrough and
+                    printed again. This one came out much better and both the
+                    keyboard and screen could fit. I then realized I had
+                    forgotten to make a cutout for the power input cable for the
+                    Rasberry Pi, so I adjusted some more dimensions on the cable
+                    passthrough front, added a cutout for the aforementioned
+                    cable, and printed again. This print delaminated however and
+                    I had to try again. This was the first time that everything
+                    fit, but it wasn't ready for final assembly. <br />
+                    The cable passthroughs were once again not correct and
+                    noticing my annoyance, my friend suggested placing the
+                    Arduino such that it was perpendicular to the edge leftmost
+                    of the case. In this way, the USB connector on the Arduino
+                    could be accessed from the outside and I didn't have to deal
+                    with threading cables through the inside of the case. I
+                    liked this idea, and so I made another design this time
+                    including the new Arduino placement.<br />
+                    Of course, the hole for the cable to plug into the Arduino
+                    was too small and requires some changes. I also added a
+                    cable entrance hole to the Raspberry Pi on the same side.
+                    <br /><br />
+                </div>
+                <div class="content scroll">
+                    Keep in mind, all of these prints are taking 3 hours plus.
+                    This was a lot of painful interation. However, I got this
+                    print back and all of the dimensions were correct, but the
+                    cable holes were large enough that they started to sag as
+                    the filament did not have enough support to solidfy in time
+                    before it started to sag. I printed a new design with
+                    supports that only took and extra 10 minutes and got the
+                    print that same day. This print had everything, correct
+                    cable measurements, sane dimensions, and just the right
+                    depth to fit my keyboard exactly. I got home and put
+                    everything togehter. The only thing left to do was turn it
+                    on. The screen did not turn on. I started to panic an spent
+                    a few minutes trying to figure out what I had done wrong. It
+                    turned out that I had not plugged in the handy HDMI flipper
+                    I mentioned a few pages ago. This meant there was no display
+                    signal from the Rasberry Pi to the screen and that was a
+                    massive problem. I plugged in the flipper and tried to fit
+                    it into te case but could not, it was a significant addition
+                    to the form factor of the Raspberry Pi and screen
+                    arrangement. I quickly made a new print with a hole for the
+                    HDMI filler and printed it the next day at school. <br />
+                    It was, of course, the wrong size. I then realized that this
+                    was actually a great oppurtunity to create a bit of security
+                    for the screen and Raspberry Pi combination: If I could make
+                    a hole in the side of the case, the flipper would protrude
+                    through that hole, effectively making it impossible for the
+                    Rasberry Pi to fall out when the calculator was tipped
+                    upside down. It required more precise dimensions but came
+                    out perfectly the first time. IMAGE OF GOOD CASE.
+                </div>
+                <div class="content scroll">
+                    The cutout is sized just right so that the connector (which
+                    is actually quite sturdy) prevents the raspberry pi from
+                    falling out. Now, I could assemble everything and we can
+                    jump back to the keyboard.<br />
+                    I needed there to be no excess wiring connecting to the
+                    Arduino as that would take up a lot of space, I also needed
+                    the wires to be stiff so that, when all of them were plugged
+                    in, they cumulatively gave enough strenth to the Arduino so
+                    that a USB cable could be plugged into it without the
+                    Arduino just moving back. This was paramount as otherwise I
+                    would not be able to plug the Arduino in. Because of this, I
+                    decided to use a much stiffer annuciator wire to provide the
+                    stability I was looking for. I also made the decision to
+                    remove the nice standoffs that I had added to my Arduino as
+                    they took up a lot of depth and were more likely to induce
+                    shorts between wires that were soldered too close together.
+                    I cut the wire to precise lengths and connected them to the
+                    Arduino and keyboard. This was the result. <br /><br />
+                </div>
+                <div class="scroll" id="keyboard6Cont">
+                    <img
+                        id="keyboard6"
+                        src="../../assets/images/keyboard6.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br />
+                    Much, much neater than anything I had done previously and
+                    all in all, about 90 minutes of soldering. I plopped the
+                    keyboard right into the case and plugged in the cable
+                    between the Arudino and the Raspberry Pi, it worked
+                    perfectly. I then created the final keymap I was going to
+                    use with multiple layers and mod keys, it was an arrangement
+                    I thought would be good enough. The next challenge I needed
+                    to deal with regarded legends. The keys needed to be labeled
+                    and I didn't know how I was going to do that. <br />
+                    Earlier in this process I toyed with the idea (suggest to me
+                    by an advisor) to use the laser cutter to create some wooden
+                    keycaps. This eventually became too difficult logistically
+                    and would take too long to do, so I had to scrap it. Wood
+                    would make creating legends easy but I was now using plastic
+                    that could contain any number of chemicals that could be
+                    harmful if aerosolized. I eventually went with the idea of
+                    using those little "Hello my name is: ___________" nametags,
+                    cut up into smaller pieces, as my legends. They secured well
+                    to the keycap tops and came off without residue if they
+                    needed to be changed. My hands are incredibly shaky as I
+                    mentioned earlier and thus my handwriting is awful but I
+                    tried my best and got something legible. Here is the final
+                    calculator I showed at my exhibition. <br /><br />
+                </div>
+                <div class="scroll" id="calculatorCont">
+                    <img
+                        id="calculator"
+                        src="../../assets/images/calculator.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="content scroll">
+                    <br/>
+                    I was and still am quite proud how this turned out. A lot of
+                    people at the exhibition seemed impressed with the
+                    construction and even more so by the calculating and
+                    graphing capabilities. The calculator is handholdable in
+                    terms of form factor, but the lack of a battery means it is
+                    tethered to a plug.
                 </div>
             </div>
 
