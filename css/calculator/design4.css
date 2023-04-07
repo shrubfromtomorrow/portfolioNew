@@ -115,9 +115,32 @@
     object-fit: cover;
 }
 
-
 code {
     font-size: 1vw;
+}
+
+#nextStepsLinkCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+#nextStepsLink {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+#nextStepsLink:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
 }
 
 #footer {
