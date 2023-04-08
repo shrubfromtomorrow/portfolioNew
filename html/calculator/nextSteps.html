@@ -41,6 +41,10 @@
                 </div>
             </div>
             <div id="project">
+                <div id="linksCont" class="scroll">
+                    <a class="link" href="design4.html">The Design 4</a>
+                    <a class="link" href="calculatorHome.html">Calc Home</a>
+                </div>
                 <div class="header scroll">The Vision</div>
                 <div class="content scroll">
                     So hopefully you are reading this after having had a look at
@@ -71,14 +75,155 @@
                 </div>
                 <div class="content scroll">
                     The single biggest drawback to my previous prototype is my
-                    compute unit. Using a Raspberry Pi is fundamentally against
-                    the vision of this project as it is an incredibly open piece
-                    of hardware. Not only does it hold a full OS that bad actors
-                    could get into, the whole point of something like a Rasperry
-                    Pi is that you have control over you hardware, something
-                    that would also be a bad idea to give a random student control over.
+                    choice of compute unit. Using a Raspberry Pi is
+                    fundamentally against the vision of this project as it is an
+                    incredibly open piece of hardware. Not only does it hold a
+                    full OS that bad actors could get into, the whole point of
+                    something like a Raspberry Pi is that you have control over
+                    you hardware, something that would not lend to approval for
+                    use in schools and testing environments. Here we get the
+                    stage of the project that I am currently working on.<br />
+                    In late February (2023) I met with Dan Rosenstein whose
+                    current title is "Group Product Manager - Advanced Autonomy
+                    and Applied Robotics at Microsoft". He has an incredible
+                    amount of experience with embedded systems and would be a
+                    great help with the next stage of this project. During our
+                    meeting we talked about the long term goals of the project
+                    and the general pathway to turning something like this into
+                    a product. One of the ideas I took away from the
+                    conversation was the suggestion to create a prototype of the
+                    calculator with an Arduino. Arduinos are an MCU
+                    (microcontroller rather than the MPU that a Raspberry Pi is
+                    (microprocessor)) and do not have an operating system built
+                    in, they run firmware directly through a bootloader. This
+                    would be fantastic in terms of locking down what the
+                    calculator could possibly do: as long as people cannot
+                    upload their own firmware to the Arduino, it will only ever
+                    do one thing. The other great thing about an Arduino is the
+                    form factor. The Arduino I am currently developing with as
+                    my main processor is the same size as the Arduino I used for
+                    the keyboard in the Raspberry Pi prototype: far, far smaller
+                    than the Raspberry Pi I used before. Most Arduinos also do
+                    not have internet access capabilities anywhere in their
+                    hardware, another plus.<br /><br />
+                </div>
+                <div class="content scroll">
+                    It isn't all sunshine and rainbows however. Arduinos are
+                    weaker in the CPU department, the one I use has a clock
+                    speed of 16mhz compared to the 1.4ghz of the Raspberry Pi.
+                    This doesn't mean that my Arduino will calculate things as
+                    slowly as a TI calculator would, it just means that it is
+                    slower than my previous prototype. There is also the issue
+                    of memory. The Arduino I use only has 32kb of flash memory.
+                    Fitting the same capabilities as my previous calculator onto
+                    32kb is going to be tough. Another drawback is that I won't
+                    be able to develop software the same way as I did before.
+                    There is no such thing as a web browser, HTML, CSS, or even
+                    JS in an Arduino; everything that I write will have to be in
+                    Arduino's C++ dialect. Development would take a long time,
+                    but it isn't the main idea of this next prototype. This
+                    prototype is physical: how can I make this calculator
+                    exactly what I want from a hardware point of view? Once I
+                    prove that I can put a keyboard, battery, screen, and
+                    compute unit all in a decent form factor, that is when I
+                    will search for funding and create my own MCU with more
+                    memory and a faster CPU that fits my form factor exactly.<br /><br />
+                </div>
+                <div class="content scroll">
+                    So far in my Arduino journey, I have gotten to the stage
+                    where I can input number from my keyboard and display them
+                    on a display. That seems rudimentary but it really isn't. It
+                    took about 2 months to get to this point. I had to get a
+                    screen that works with my Arduion, wire it up correctly
+                    using its 8-bit parallel interface (no such thing as HDMI in
+                    Arduino), find a library that could communicate with an
+                    8-bit parallel interface (most display libraries for Arduino
+                    are built for a serial interface like SPI), write my own key
+                    matrix code (QMK firmware exists to output to USB, something
+                    that I don't have on Arduino), and lastly parse all of those
+                    individual voltages from the keyboard into numbers to call
+                    functions to display stuff on my screen. It is hard to
+                    develop something so complex on an Arduino, but it has been
+                    fun.<br />
+                    I am not going to detail the entire development process thus
+                    far as in depth as I did for the Raspberry Pi prototype as I
+                    want the 20-20 hindsight when I write about it, and I am
+                    still in the midst of developing it.<br /><br />
+                </div>
+                <div class="content scroll">
+                    The other piece of the future I want to talk about is in
+                    regards to a core change in this project. A couple weeks
+                    after my meeting with Dan, I had a meeting with an old
+                    advisor named Ben. He teaches math at Issaquah High School
+                    and I thought that getting the input of an actual math
+                    teacher would be a good idea when it came to making good
+                    decisions with this project, after all, they are the ones
+                    that will allow or disallow a certain calculator in their
+                    classroom, I need to sate them.<br />
+                    Ben gave me some valuable insight into how delicate the
+                    balancing act of adding features can be. Certain grade
+                    levels need to prove that they can actually perform the
+                    menial math task (say understanding the general shapes of
+                    graphed functions) before they can have the luxury of being
+                    able to get the answer quickly from a calculator. This also
+                    ties into what I will call the generationality of
+                    calculators. The generationality of calculators comes from
+                    needing several calculators throughout a student's life.
+                    Plenty of students get a basic arithmetic once in 5th grade,
+                    a scientific calculator once in 6th grade, and a graphing
+                    calculator once in 9th grade. That's a lot of calculators,
+                    it would be nice to just give a 5th grader a graphing
+                    calculator and have them not need the more advanced
+                    functionality until they are older. But students cannot be
+                    trusted to have that level of power, if you need a middle
+                    school student to find the y-intercept of a linear function,
+                    you want to make sure that they can do the algebraic work
+                    before allowing them to just use the more advanced
+                    functionality to calculate the intercept. Ben and I were
+                    discussing this when I had the idea of a multi-module
+                    calculator: what if students bought one compute unit (with a
+                    screen and battery) and as they levelled up their education,
+                    they would be allowed to use more different keyboards that
+                    enabled greater functionality. Basically, a student's parent
+                    buys them a calculator in 5th grade and they also buy the
+                    arithmetic keyboard. The compute unit still has the ability
+                    to graph functions and do things like matrix multiplication,
+                    the student just can't access that functionality without
+                    having a keyboard that can send the right input to the
+                    compute unit. As the student goes into middle school, high
+                    school, or even university, rather than buying a new
+                    calculator each time, the student/parent only has to buy
+                    another keyboard module. Teachers can verify that a student
+                    has the correct module installed with a quick glance and can
+                    be assured that the student is doing the mental work where
+                    they need to. <br /><br />
+                </div>
+                <div class="content scroll">
+                    This has a few benefits: lower cost over a students
+                    lifetime, and less electronic waste. When a student is done
+                    needing their basic arithmetic module, it can just be passed
+                    on to another student for free or sold on Ebay, further
+                    reducing waste. It also would save districts buying in bulk
+                    a lot of money: if this hypothetical calculator corporation
+                    just needed to manufacture one type of compute module, their
+                    manufacturing costs go down and they can pass the savings
+                    onto districts.<br />
+                    I think this is a fantastic idea, though I am a bit biased,
+                    and it wouldn't necessarily be that difficult to develop. I
+                    think that more than anything else I will do, this will be
+                    the most disruptive to the market.<br /><br />
+                </div>
+                <div class="content scroll">
+                    And that is all I have to say. I am hopeful for the future
+                    of this project and I hope it makes as much of a splash as I
+                    want it to.
+                </div>
+                <div id="linksCont" class="scroll">
+                    <a class="link" href="design4.html">The Design 4</a>
+                    <a class="link" href="calculatorHome.html">Calc Home</a>
                 </div>
             </div>
+            <div id="footer"></div>
         </div>
         <script src="../../js/prism.js"></script>
         <script src="../../js/work.js"></script>

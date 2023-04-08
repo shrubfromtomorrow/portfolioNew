@@ -206,8 +206,8 @@ body {
 }
 
 .content {
-    font-size: 2.5vh;
-    line-height: 4vh;
+    font-size: clamp(1rem, 1.3vw, 1.3vw);
+    line-height: clamp(1.6rem, 2.1vw, 2.1vw);
     margin-left: 25vw;
     margin-right: 25vw;
 }

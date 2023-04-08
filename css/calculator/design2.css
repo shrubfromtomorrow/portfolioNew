@@ -90,17 +90,17 @@ code {
     object-fit: cover;
 }
 
-#design3LinkCont {
+#linksCont {
     margin: 7.5vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     font-size: 2vw;
     color: var(--Base);
     background-color: var(--Text);
     transition: all 0.25s ease;
 }
 
-#design3Link {
+.link {
     color: var(--Base);
     background-color: var(--Text);
     transition: all 0.25s ease;
@@ -109,7 +109,7 @@ code {
     border-radius: 0.5rem;
 }
 
-#design3Link:hover {
+.link:hover {
     cursor: pointer;
     border: 1px solid var(--Base);
 }

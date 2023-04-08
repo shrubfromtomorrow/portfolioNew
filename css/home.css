@@ -1,10 +1,6 @@
 
 #mainGreetCont {
-    margin-top: 22vh;
-    margin-bottom: 31vh;
     display: flex;
-    /* This has to change  */
-    /* height: calc(100vh - 8.7vh); */
     flex-grow: 1;
     align-items: center;
 }
