@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Build</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../../css/cssReset.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+        <link rel="stylesheet" href="../../css/prism-nord.css" />
+        <link rel="stylesheet" href="../../css/calculator/build.css" />
+    </head>
+    <body>
+        <div id="content">
+            <div id="frontPage">
+                <div id="topbar">
+                    <div id="name">Orion<br />Andrews</div>
+                    <div id="navbar">
+                        <a href="../home.html">Home</a>
+                        <span>|</span>
+                        <a href="../work.html">Work</a>
+                        <span>|</span>
+                        <a>About</a>
+                    </div>
+                </div>
+                <div id="designGreetCont">
+                    <div id="designGreet">
+                        The <br />
+                        Build <br />
+                    </div>
+                    <div id="designSum">
+                        Steps to building your own calculator.
+                    </div>
+                </div>
+            </div>
+            <div id="project">
+                <div class="header scroll">Materials</div>
+                <div class="content scroll">
+                    In this guide I will lay out the general steps for
+                    assembling the first prototype of my calculator on your own.
+                    First, a list of materials.<br /><br />
+                    <ul>
+                        <li>Raspberry Pi 3b with a micro SD card for an OS</li>
+                        <li>This screen</li>
+                        <li>These keyswitches</li>
+                        <li>These keycaps</li>
+                        <li>
+                            Some 16 guage copper wire. Maybe 4 ft to be safe.
+                        </li>
+                        <li>Some diodes. These work well.</li>
+                        <li>Electrical tape.</li>
+                        <li>My github</li>
+                    </ul>
+                    <br />
+                    You will also need access to at least a 3D printer. A laser
+                    cutter will make dealing with the switchplate a lot easier,
+                    but it isn't necessary. <br />
+                    Those of you who may have read the narrative section of This
+                    calculator will notice that most of these items are
+                    specifically for the keyboard; it is the item that will take
+                    the most time, effort, and resources to construct.<br />
+                    On the software side of things, you will need the link to my
+                    github above as it contains the executable you will need to
+                    run this calculator. <br /><br />
+                </div>
+                <div class="header scroll">Setting up the Pi</div>
+                <div class="content scroll">
+                    The first thing you will need to do it flash your Raspberry
+                    Pi. There are instructions all over the internet and so I
+                    will leave you to figure it out. However, AND THIS IS
+                    IMPERATIVE, YOU MUST SELECT THE 64 BIT VERSION OF RASPBERRY
+                    PI OS. The executable will not run on the 32 bit that is
+                    standard. You can select 64 bit under the "Raspberry Pi OS
+                    (other)" tab, you are just looking for the regular 64 bit
+                    version.<br />
+                    Once you have the micro SD card flashed, plug it into your
+                    Pi, power the Pi, and connect up a display and keyboard.
+                    Once you are in the desktop, you will need to get the Pi's
+                    IP address.
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://raspberrypi-guide.github.io/networking/connecting-via-ssh"
+                        >This</a
+                    >
+                    guide provides good guidance. You needn't SSH into the Pi
+                    yet, just make sure you have the IP address.<br />
+                    Now you need to get the executable that holds the
+                    calculator. On your desktop, using my github link, navigate
+                    to the "execs/arm64/" directory. Inside you should see
+                    "calcapp_1.0.0_arm64.deb". Click on the .deb file and click
+                    download.<br />
+                    From here you will need to copy this over to the Raspberry
+                    Pi. There are several ways to do this. To get around having
+                    to copy it entirely, you could download it from the Pi's
+                    browser. Another option would be a USB stick. You could also
+                    use SSH to copy it over. There are many guides online so I
+                    won't cover it here. <br />
+                    Once you have the .deb file on your Raspberry Pi, you will
+                    need to install it. From the terminal, navigate to the
+                    directory that has the .deb file. To install it, type "sudo
+                    apt install calcapp_1.0.0_arm64.deb". This will install the
+                    .deb as an application you can run anywhere on the Raspberry
+                    Pi by typing "calcapp". However, we want to take this a step
+                    further. First, the resolution of the Pi needs to be lowered
+                    so as to fit the screen and second, we want this calcapp to
+                    autoexecute on boot. To do this, we first need to create a
+                    shell script that will run two commands. From the home
+                    directory of the Pi, type "nano exec.sh". Once inside nano,
+                    add two lines of text: "xrandr -s 720x480" and "calcapp".
+                    Save changes and exit nano. Now, type "chmod +x exec.sh"
+                    into the terminal to make the script executable. "xrandr -s
+                    720x480" will set the resolution outputted by the Pi to
+                    720x480 which, while larger than the screen, is the 3:2
+                    aspect ratio, this helps to reduce blurring as 480x320 is
+                    not an option. 
+                    TALK ABOUT CREATING EXEC.DESKTOP IN .CONFIG/AUTOSTART
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+        <script src="../../js/prism.js"></script>
+        <script src="../../js/work.js"></script>
+    </body>
+</html>

@@ -102,7 +102,7 @@
                     a bit of an idiot. I decided that now was the time to figure
                     out how to get my input from those boxes. I was unfathomably
                     naïve and I only thought of MathQuill as a way to style my
-                    input and so I completely ignored the documenation and I
+                    input and so I completely ignored the documentation and I
                     spent a week writing code to check the user's most recent
                     inputs, complete SEPARATE from my input boxes. I was
                     effectively polling for a new input and keeping that recent
@@ -252,7 +252,7 @@ ctx.scale(scale, scale);</code></pre>
                     coordinate system, (0, 0) is often in the middle of the page
                     as it allows for the most context to be viewed for the most
                     graphs. But what is (0, 0) in my canvas? In the JS
-                    pixelgrid, (0, 0) is not in the middle of the screen, it is
+                    pixel grid, (0, 0) is not in the middle of the screen, it is
                     in the top left. So now you have to redefine a coordinate
                     system with some common calculations. For example, to plot a
                     point at (-8, 0), you would need to half the width of the
@@ -275,7 +275,7 @@ ctx.scale(scale, scale);</code></pre>
                     "But wait!" you may say, "How many should I draw?" you may
                     ask. Well, why not start with 10,000? That's quite a lot and
                     will have little to no aliasing for any person with a sane
-                    screensize. You could also draw lines between each point you
+                    screen size. You could also draw lines between each point you
                     draw to make the function, you know, continuous."But wait!"
                     you might say, "Aren't you running this on a little
                     raspberry pi?" you might ask. And you'd be right, having a
@@ -388,14 +388,14 @@ ctx.scale(scale, scale);</code></pre>
                 <div class="content scroll">
                     The last issue I want to talk about is the separation of the
                     two pages in my calculator. There are two pages (three
-                    acutally but only two are complementary to each other):
+                    actually but only two are complementary to each other):
                     graphing and standard calculating. There are a lot of ways
                     to split these two apart and I tried a lot of methods. The
                     first thing I tried was to simply have two different HTML
                     pages and have a keybind that switched to a new HTML page
                     (just like what the buttons on this website do). This works
-                    great on a broswer, but not so much on an actual Electron
-                    app. Where a regular broswer has one real process (the
+                    great on a browser, but not so much on an actual Electron
+                    app. Where a regular browser has one real process (the
                     renderer), Electron has two processes: a main process and a
                     child renderer process. The main process has a main window
                     object that is called on a specific HTML page, switching
@@ -405,7 +405,7 @@ ctx.scale(scale, scale);</code></pre>
                 <div class="content scroll">
                     So I decided to try and switch pages the way that Electron
                     seems to like. It is a configuration that works by pressing
-                    a keybind in the renderer process, that passes an ardument
+                    a keybind in the renderer process, that passes an argument
                     to a middleman that then uses IPC (inter-process
                     communication) to talk to the main process and tell it to
                     kill the current window and display the new one. This is
@@ -419,7 +419,7 @@ ctx.scale(scale, scale);</code></pre>
                     I spent about 2 weeks troubleshooting before I decided to
                     create a page-switching implementation another way: stacking
                     the pages on top of each other. <br /><br />
-                    Thie method is actually pretty simple, and I avoided it for
+                    This method is actually pretty simple, and I avoided it for
                     so long because I thought it was going to be a massive pain
                     to implement. The basic structure is to have two containers
                     (three including the function input window). When one of the
@@ -436,7 +436,7 @@ ctx.scale(scale, scale);</code></pre>
                 <div class="content scroll">
                     And that's about it, with those issues addressed, I was able
                     to tackle cosmetic changes and work on making the program
-                    more useable through small things like histroy retention and
+                    more useable through small things like history retention and
                     selection. I don't want to talk about those tens of simple
                     things as it would be boring and this page is already long
                     enough. This was about the main struggles I faced and how I
