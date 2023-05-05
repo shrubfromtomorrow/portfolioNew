@@ -38,10 +38,6 @@
     color: var(--Base);
 }
 
-code {
-    font-size: 1vw;
-}
-
 #gridCont {
     display: flex;
     width: 100%;

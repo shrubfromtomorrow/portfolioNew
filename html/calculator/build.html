@@ -118,8 +118,36 @@
                     720x480" will set the resolution outputted by the Pi to
                     720x480 which, while larger than the screen, is the 3:2
                     aspect ratio, this helps to reduce blurring as 480x320 is
-                    not an option. 
-                    TALK ABOUT CREATING EXEC.DESKTOP IN .CONFIG/AUTOSTART
+                    not an option. <br />
+                    That script we just created is only one part of having the
+                    calculator and resolution change automatically. Now we need
+                    to actually make it autoexecute. From the home directory in
+                    the terminal, type "cd .config" to enter into the .config
+                    directory. From here, type "mkdir autostart", this will
+                    create a new directory in .config that Raspberry Pi looks
+                    for when booting up. Change into autostart with "cd
+                    autostart/". Raspberry Pi looks for a special kind of file
+                    to execute named with a ".desktop" extension. Thus, we need
+                    to create a file called exec.desktop. Type "nano
+                    exec.desktop" to create a .desktop file and begin editing
+                    it. In the file, type:
+                </div>
+                <div class="content scroll">
+                    <pre><code class="language-js">[Desktop Entry]
+Type=Application
+Name=Calc
+Exec=/home/{username}/exec.sh</code></pre>
+                </div>
+                <div class="content scroll">
+                    ({username} should be the username of your Raspberry Pi).
+                    Exit out of nano with ctrl+x and pressing y to save changes.
+                    This file creates a new desktop entry that executes the
+                    script in the Raspberry Pi's home directory. <br /><br />
+                </div>
+                <div class="content scroll">
+                    With that, you are done. By rebooting the Raspberry Pi, you
+                    should see it boot right into the calculator app. Now that
+                    the Pi is set up, we can move onto the keyboard and the case.
                 </div>
             </div>
             <div id="footer"></div>

@@ -256,3 +256,7 @@ hr {
 strong {
     font-family: "Iosevka Bold";
 }
+
+code {
+    font-size: 1vw;
+}
