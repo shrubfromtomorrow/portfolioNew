@@ -55,6 +55,7 @@
                         <li>Some diodes. These work well.</li>
                         <li>Electrical tape.</li>
                         <li>My github</li>
+                        <li>Soldering Iron</li>
                     </ul>
                     <br />
                     You will also need access to at least a 3D printer. A laser
@@ -116,9 +117,9 @@
                     Save changes and exit nano. Now, type "chmod +x exec.sh"
                     into the terminal to make the script executable. "xrandr -s
                     720x480" will set the resolution outputted by the Pi to
-                    720x480 which, while larger than the screen, is the 3:2
-                    aspect ratio, this helps to reduce blurring as 480x320 is
-                    not an option. <br />
+                    720x480 which, while larger than the screen, is the same 3:2
+                    aspect ratio as the 480x320 resolution that the screen is,
+                    this helps reduce blurring. <br />
                     That script we just created is only one part of having the
                     calculator and resolution change automatically. Now we need
                     to actually make it autoexecute. From the home directory in
@@ -147,7 +148,36 @@ Exec=/home/{username}/exec.sh</code></pre>
                 <div class="content scroll">
                     With that, you are done. By rebooting the Raspberry Pi, you
                     should see it boot right into the calculator app. Now that
-                    the Pi is set up, we can move onto the keyboard and the case.
+                    the Pi is set up, we can move onto the keyboard and the
+                    case.
+                </div>
+                <div class="header scroll">Keyboard</div>
+                <div class="content scroll">
+                    I explain how the keyboard work in one of my narrative pages
+                    (<a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="design3.html"
+                        >this one</a
+                    >) and so I will just put instructions here. The first thing
+                    you will need is a switchplate. There are a couple ways to
+                    design this, 3D printing would probably be best.
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://github.com/shrubfromtomorrow/seniorProjectMisc/blob/mainline/3D/Switchplate%20Design2.stl"
+                        >This</a
+                    >
+                    is the STL file for the switchplate, it's a short and small
+                    print that I would recommend slicing on the highest detail
+                    setting you have, measurements are critical. Once you have a
+                    switchplate in hand, pop the switches listed above in,
+                    making sure that the edge with the pins is parallel with a
+                    short edge on the switchplate. Next, you need to deal with
+                    the copper wire: it needs to be straightend out and I do
+                    that by sticking one end into the clamp of a powerdrill,
+                    holding the other end with pliers, and turning the drill on
+                    slowly in 10 second bursts. After a bit, the wire should be straight.
                 </div>
             </div>
             <div id="footer"></div>
