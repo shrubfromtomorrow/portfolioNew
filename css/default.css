@@ -257,6 +257,30 @@ strong {
     font-family: "Iosevka Bold";
 }
 
+#linksCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+.link {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+.link:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
+}
+
 code {
     font-size: 1vw;
 }

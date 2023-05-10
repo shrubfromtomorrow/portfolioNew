@@ -39,6 +39,10 @@
                 </div>
             </div>
             <div id="project">
+                <div id="linksCont" class="scroll">
+                    <a class="link" href="nextSteps.html">Next Steps</a>
+                    <a class="link" href="calculatorHome.html">Calc Home</a>
+                </div>
                 <div class="header scroll">Materials</div>
                 <div class="content scroll">
                     In this guide I will lay out the general steps for
@@ -46,15 +50,47 @@
                     First, a list of materials.<br /><br />
                     <ul>
                         <li>Raspberry Pi 3b with a micro SD card for an OS</li>
-                        <li>This screen</li>
-                        <li>These keyswitches</li>
-                        <li>These keycaps</li>
+                        <li>
+                            <a
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                href="https://www.amazon.com/UCTRONICS-Raspberry-Display-Touchscreen-Compatible/dp/B08XB6NV47"
+                                >This screen</a
+                            >
+                            (looks like it comes with a case now)
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                href="https://chosfox.com/collections/choc-switch/products/kailh-low-profile-choc-switches?variant=42514648072386"
+                                >These keyswitches</a
+                            >, 3 orders of 10
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                href="https://chosfox.com/products/chocfox-cfx-choc-keycaps?variant=42165428289730"
+                                >These keycaps</a
+                            >, 3 orders of 1Ux10
+                        </li>
+                        <li>An Arduino Pro Micro</li>
                         <li>
                             Some 16 guage copper wire. Maybe 4 ft to be safe.
                         </li>
-                        <li>Some diodes. These work well.</li>
+                        <li>Insulated annunciator wire</li>
+                        <li>
+                            Some diodes.
+                            <a
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                href="https://www.amazon.com/dp/B07Q4F3Y5W"
+                                >These</a
+                            >
+                            work well.
+                        </li>
                         <li>Electrical tape.</li>
-                        <li>My github</li>
                         <li>Soldering Iron</li>
                     </ul>
                     <br />
@@ -74,8 +110,7 @@
                     The first thing you will need to do it flash your Raspberry
                     Pi. There are instructions all over the internet and so I
                     will leave you to figure it out. However, AND THIS IS
-                    IMPERATIVE, YOU MUST SELECT THE 64 BIT VERSION OF RASPBERRY
-                    PI OS. The executable will not run on the 32 bit that is
+                    IMPERATIVE, you must select the 64 bit version of Raspberry Pi OS. The executable will not run on the 32 bit that is
                     standard. You can select 64 bit under the "Raspberry Pi OS
                     (other)" tab, you are just looking for the regular 64 bit
                     version.<br />
@@ -154,14 +189,10 @@ Exec=/home/{username}/exec.sh</code></pre>
                 <div class="header scroll">Keyboard</div>
                 <div class="content scroll">
                     I explain how the keyboard work in one of my narrative pages
-                    (<a
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        href="design3.html"
-                        >this one</a
-                    >) and so I will just put instructions here. The first thing
-                    you will need is a switchplate. There are a couple ways to
-                    design this, 3D printing would probably be best.
+                    (<a href="design3.html">this one</a>) and so I will just put
+                    instructions here. The first thing you will need is a
+                    switchplate. There are a couple ways to design this, 3D
+                    printing would probably be best.
                     <a
                         target="_blank"
                         rel="noreferrer noopener"
@@ -173,11 +204,183 @@ Exec=/home/{username}/exec.sh</code></pre>
                     setting you have, measurements are critical. Once you have a
                     switchplate in hand, pop the switches listed above in,
                     making sure that the edge with the pins is parallel with a
-                    short edge on the switchplate. Next, you need to deal with
-                    the copper wire: it needs to be straightend out and I do
-                    that by sticking one end into the clamp of a powerdrill,
-                    holding the other end with pliers, and turning the drill on
-                    slowly in 10 second bursts. After a bit, the wire should be straight.
+                    short edge on the switchplate, add the keycaps to the
+                    switches. Next, you need to deal with the copper wire: it
+                    needs to be straightend out and I do that by sticking one
+                    end into the clamp of a powerdrill, holding the other end
+                    with pliers, and turning the drill on slowly in 10 second
+                    bursts. After a bit, the wire should be straight and you can
+                    move on to cutting. Cut 6 lengths that will fit across the
+                    width of the switchplate and 4 that will cross the height of
+                    the switchplate, you may need to straighen more wire. The
+                    long lengths of wire need to be soldered to the pins like
+                    so:<br /><br />
+                    <div id="solderingCont">
+                        <img
+                            id="soldering"
+                            src="../../assets/images/soldering2.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <br />
+                    The next thing to do is to add the diodes. These diode
+                    should be attached to the free pin of each switch and the
+                    red end should be closest to the pin. Trim the red end down
+                    to about a centimeter or so and solder to the free pin.
+                    There is an image with them configured below. The next thing
+                    to do is to add the copper rows, these will be place on top
+                    of the columns but so as to prevent a short and make the
+                    keyboard matrix work as expected, the rows need to be
+                    wrapped with electrical tape in certain places (the points
+                    of contact between the rows and columns.) Place the rows on
+                    the columns and bend the diodes back over the rows to secure
+                    the in place, solder the diodes to the rows and trim the
+                    excess of the diode. This is what you should have by now,
+                    minus the extra wiring to the Arduino. <br /><br />
+                    <div id="solderingCont">
+                        <img
+                            id="soldering"
+                            src="../../assets/images/keyboard6.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <br />
+                </div>
+                <div class="content scroll">
+                    Now that the hard part is done, the next thing to do is to
+                    configure the Arduino. There are a few different ways to
+                    flash an Arduino keymap, but the easiest (though Windows and
+                    Mac exclusive) is to use QMK toolbox. If you are on Linux,
+                    there are tutorials on how to use QMK compile/flash from the
+                    command line. You can get QMK toolbox
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://github.com/qmk/qmk_toolbox/releases"
+                        >here</a
+                    >, just click qmk_toolbox.exe from the assets menu. Once QMK
+                    toolbox is installed, if you are on Windows, right click on
+                    the window padding and click install drivers (unnecessary on
+                    mac). Now, download
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://github.com/shrubfromtomorrow/seniorProjectMisc/blob/mainline/hex/handwired_calc24_default.hex"
+                        >this</a
+                    >
+                    hex file by clicking the download button near the top close
+                    to the "raw" option. With that downloaded connect your
+                    Arduino to your pc with a micro usb cable and open QMK
+                    toolbox. At the top, click the "open" button and select the
+                    downloaded hex file. Make sure the option next to the "open"
+                    button says "atmega32u4" and select "autoflash". Now, with
+                    some metal tweezers or paperclip, find the two pins "GND"
+                    and "RST", they should be next to each other, and short them
+                    (put one end of whatever metal object in each). With
+                    autoflash enabled, you should see some dialogue in QMK
+                    toolbox and after a few seconds the Arduino should be
+                    flashed.
+                </div>
+                <div class="content scroll">
+                    <br />
+                    Now, to wire the Arduino to the keyboard, the mapping is
+                    such (pin : row): (10 : 1), (16 : 2), (9: 3), (4 : 4), (5 :
+                    5), (3 : 6). (pin : column): (2 : 1), (6 : 2), (7 : 3), (8 :
+                    4). <br />
+                    The mapping seems strange, and it is, but it was what I came
+                    up with and what the keyboard hex file is built for. You can
+                    solder any wire from the arduino pin to anywhere on the
+                    given row/column, the connection does not have to be at the
+                    end of the row/column. Realistically, any kind of insulated
+                    wire would work but I used annunciator wire as, while it is
+                    hard to work with, it is stiff and would enable me to plug
+                    the cable into the Arduino without having to make the cutout
+                    in the case the exact size of the Arduino (the Arduino won't
+                    move around). Now is the time for the test. Plug the micro
+                    usb into the Arduino and the other end into your computer.
+                    The button layout is this:
+                    <pre>
+
+[_BASE] = LAYOUT_ortho_6x4(
+    layer2, graph, graph input, backspcae,
+    tab, pi, exponent, divide,
+    7,   8,   9,   multiply,
+    4,   5, 6, minus,
+    1,   2, 3, plus,
+    0,   ., x, enter
+),
+[_MOD] = LAYOUT_ortho_6x4(
+    layer1, clear graph, empty, full backspace,
+    backtab, e, sqrt, reload whole page,
+    sin, cos, tan, (,
+    beginning, end, up, ),
+    empty, left, empty, right,
+    empty, empty, down, empty
+)
+                    </pre>
+                    It's a bit hard to read but I'm sure you'll figure it out.
+                    Ther are two layers that can be toggled through with the top
+                    left key. Pressing the number keys is your safest bet on
+                    your own computer, some of the buttons are actually key
+                    combinations and could do something unexpected.
+                </div>
+                <div class="content scroll">
+                    <br />
+                    Now for the fun part, power on the Raspberry Pi, and plug
+                    the keyboard cable into the USB slot, using the keymap
+                    above, you should be able to use the calculator to it's full
+                    extent. In terms of labeling the switches, there are
+                    probably better ways to do this, but I took some of those
+                    "hello my name is _" stickers and cut them up into square
+                    with a paper cutter, it would be best if you measured the
+                    surface dimensions of your keycaps so as to cut the squares
+                    how you want.
+                </div>
+                <div class="content scroll">
+                    <br /><br />
+                    Moving onto the case. I will preface this section with this:
+                    I am not that great at CAD. If you have access to the 3D
+                    printers and you are experienced with 3D modeling, I would
+                    highl recommend making your own case, mine is far from
+                    optimal. With that out of the way,
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://github.com/shrubfromtomorrow/seniorProjectMisc/blob/mainline/3D/caseTest6-Case.stl"
+                        >here</a
+                    >
+                    is the STL for the case. Different 3D printers will have
+                    different slicing programs so you will need to figure that
+                    out yourself. It is a decently long print so I would
+                    recommend using a draft layer thickness of around .3mm.
+                    Supports are a good idea. <br />
+                    Once that is printed, break off the supports and first add
+                    the Raspberry Pi and screen combination, making sure that
+                    the HDMI flipper is NOT added yet. Orient the Pi such that
+                    the HDMI ports are shown through the top hole in the case
+                    and the USB ports are on the left. Add the HDMI flipper by
+                    attaching it through the cutout in the top, it is fairly
+                    rigid and will prevent the Pi from falling out. Next, insert
+                    the keyboard. This is tough as the Arduino needs to fit into
+                    the little slot I have made for it and may require redoing
+                    the wiring from the Arduino to the keyboard. With that in,
+                    connect the micro USB through the little hole and plug the
+                    USB a end into the Raspberry Pi (yes, the cable will be on
+                    the outside). Latly, add the power connector in the back.
+                    And that's it, that's the fully assembled calculator. It
+                    should look something like this: <br />
+                    <br />
+                    <div id="solderingCont">
+                        <img
+                            id="soldering"
+                            src="../../assets/images/calculator.jpg"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div id="linksCont" class="scroll">
+                    <a class="link" href="nextSteps.html">Next Steps</a>
+                    <a class="link" href="calculatorHome.html">Calc Home</a>
                 </div>
             </div>
             <div id="footer"></div>
