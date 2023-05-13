@@ -207,6 +207,7 @@ body {
 
 .content {
     font-size: clamp(1rem, 1.3vw, 1.3vw);
+    display: flex;
     line-height: clamp(1.6rem, 2.1vw, 2.1vw);
     margin-left: 25vw;
     margin-right: 25vw;
@@ -279,6 +280,23 @@ strong {
 .link:hover {
     cursor: pointer;
     border: 1px solid var(--Base);
+}
+
+.imcont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.im {
+    width: 100%;
+    height: 47%;
+    object-fit: cover;
+}
+
+.math {
+    /* width: 100%; */
+    justify-content: center;
 }
 
 code {

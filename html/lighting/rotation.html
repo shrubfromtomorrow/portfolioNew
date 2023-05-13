@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lighting</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../../assets/images/shrek.png"
+        />
+        <link rel="stylesheet" href="../../css/cssReset.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+        <link rel="stylesheet" href="../../css/lighting/lightingHome.css" />
+        <link rel="stylesheet" href="../../css/prism-nord.css" />
+    </head>
+    <body>
+        <div id="content">
+            <div id="frontPage">
+                <div id="topbar">
+                    <div id="name">Orion<br />Andrews</div>
+                    <div id="navbar">
+                        <a href="../home.html">Home</a>
+                        <span>|</span>
+                        <a href="../work.html">Work</a>
+                        <span>|</span>
+                        <a>About</a>
+                    </div>
+                </div>
+                <div id="lightingGreetCont">
+                    <div id="lightingGreet">
+                        Mapping <br />
+                        and Rotation
+                    </div>
+                    <div id="lightingSum">
+                        Rotating LED patterns and 2D coordinates.
+                    </div>
+                </div>
+            </div>
+            <div id="project">
+                <div id="linksCont" class="scroll">
+                    <!-- <a class="link" href="rotation.html">Mapping</a> -->
+                </div>
+                <div class="header scroll">Mapping</div>
+                <div class="content scoll">
+                    I mentioned earlier the idea of describing LEDs in 2
+                    dimensions. Here is where I will elborate on that. When you
+                    have a normal string of LEDs, they have no concept of their
+                    position in space, the LED strips you might put up as
+                    decoration are in 1 dimension, there is "in front" and
+                    "behind" but the LEDs aren't even smart enough to discern
+                    that. A controller at the beginning of the string just sends
+                    a bunch of current down the wire and the LEDs scrape off a
+                    bit and use that information to power themselves in a
+                    certain way. <br />
+                    Most of the time, you have no control over the patterns, the
+                    manufacturer has created LEDs that understand a specific
+                    coded voltage that the controller sends out, and you have
+                    very little in the way of methods to control LEDs
+                    individually. With special LEDs though (ones with
+                    microcontrollers in each LED), you can add a layer of
+                    abstraction to the code the LEDs decipher and enable users
+                    to control each LED indiviudally programmatically. This
+                    allows me to say "light LED 24 with this RGB value". With
+                    this, I can make a setup with a camera that takes a photo of
+                    each LED, lit indiviudally. <br />
+                    With some more code, I can find the brightest pixel of each
+                    photo to give each LED a coordinate (x, y pixel value) and
+                    make each LED referenceble by its respective coordinate. So
+                    now, I can sort the coordinates in x-value order and light
+                    the lights up from, say, left to right. The possibilities
+                    are near endless and one of the first challenges I decided
+                    to take on was the challenge of creating a rotating pattern.
+                    <br /><br />
+                </div>
+                <div class="header scroll">Rotation</div>
+                <div class="content scroll">
+                    After a couple of small optimizations, like including the
+                    light coordinates as a supplemental text file and being able
+                    to execute a certain pattern from a centralised exec file, I
+                    moved on to tackle rotation.
+                    <br /><br />
+                    The goal here was to create some really nice mathematical
+                    patterns using rotation. Rotation is a little tough, or at
+                    least it is when you don't know what you are doing. It just
+                    so happens that in the process of finding an effective
+                    method to represent rotation, I derived the 2 dimensional
+                    rotation matrix. That looks something like this:
+                    <br /><br />
+                </div>
+                <div class="content scroll math">
+                    <a
+                        href="https://latex.codecogs.com/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        <img src="https://tinyurl.com/4u5h3p37">
+                    /></a>
+                </div>
+                <div class="content scroll">
+                    Where X and Y are input coordinates and X' and Y' are output
+                    coordinates.<br /><br />
+                    Below is the output of the simple test I created to check if
+                    my math was correct (I did not know whether my math was
+                    correct or not because I had not thought to Google "rotation
+                    matrix").
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+        <script src="../../js/work.js"></script>
+        <script src="../../js/prism.js"></script>
+    </body>
+</html>
