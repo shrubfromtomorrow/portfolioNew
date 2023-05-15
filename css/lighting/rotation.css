@@ -31,29 +31,28 @@
     color: var(--Base);
 }
 
+.content {
+    font-size: clamp(1rem, 1.3vw, 1.3vw);
+    display: flex; 
+    flex-direction: column; 
+    line-height: clamp(1.6rem, 2.1vw, 2.1vw);
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
 
-#designLinkCont {
-    margin: 7.5vw;
+.content>a:visited,
+.content>a:link {
     display: flex;
     justify-content: center;
-    font-size: 2vw;
-    color: var(--Base);
-    background-color: var(--Text);
-    transition: all 0.25s ease;
+    color: var(--Crust);
+    text-decoration: underline;
 }
-
-#designLink {
-    color: var(--Base);
-    background-color: var(--Text);
-    transition: all 0.25s ease;
-    padding: 1vw;
-    border: 1px solid var(--Text);
-    border-radius: 0.5rem;
-}
-
-#designLink:hover {
-    cursor: pointer;
-    border: 1px solid var(--Base);
+.content>a:visited:hover,
+.content>a:link:hover {
+    display: flex;
+    justify-content: center;
+    color: var(--Crust);
+    text-decoration: none;
 }
 
 #plot {
@@ -70,6 +69,8 @@
 #imGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2rem;
 }
 
 .gridImcont {
@@ -79,7 +80,7 @@
 }
 
 #gridIm {
-    width: 90%;
+    width: 95%;
     object-fit: cover;
 }
 
