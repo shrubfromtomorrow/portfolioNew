@@ -56,6 +56,33 @@
     border: 1px solid var(--Base);
 }
 
+#plot {
+    width: 50%;
+}
+
+#imGridCont {
+    font-size: clamp(1rem, 1.3vw, 1.3vw);
+    display: flex;
+    flex-direction: column;
+    line-height: clamp(1.6rem, 2.1vw, 2.1vw);
+}
+
+#imGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gridImcont {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#gridIm {
+    width: 90%;
+    object-fit: cover;
+}
+
 #footer {
     background-color: var(--Text);
     position: relative;

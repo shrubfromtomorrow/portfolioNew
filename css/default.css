@@ -208,6 +208,7 @@ body {
 .content {
     font-size: clamp(1rem, 1.3vw, 1.3vw);
     display: flex;
+    flex-direction: column;
     line-height: clamp(1.6rem, 2.1vw, 2.1vw);
     margin-left: 25vw;
     margin-right: 25vw;
@@ -215,12 +216,16 @@ body {
 
 .content>a:visited,
 .content>a:link {
+    display: flex;
+    justify-content: center;
     color: var(--Crust);
     text-decoration: underline;
 }
 
 .content>a:visited:hover,
 .content>a:link:hover {
+    display: flex;
+    justify-content: center;
     color: var(--Crust);
     text-decoration: none;
 }
