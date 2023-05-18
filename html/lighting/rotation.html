@@ -46,7 +46,7 @@
                 <div class="header scroll">Mapping</div>
                 <div class="content scoll">
                     I mentioned earlier the idea of describing LEDs in 2
-                    dimensions. Here is where I will elborate on that. When you
+                    dimensions. Here is where I will elaborate on that. When you
                     have a normal string of LEDs, they have no concept of their
                     position in space, the LED strips you might put up as
                     decoration are in 1 dimension, there is "in front" and
@@ -62,13 +62,13 @@
                     individually. With special LEDs though (ones with
                     microcontrollers in each LED), you can add a layer of
                     abstraction to the code the LEDs decipher and enable users
-                    to control each LED indiviudally programmatically. This
+                    to control each LED individually programmatically. This
                     allows me to say "light LED 24 with this RGB value". With
                     this, I can make a setup with a camera that takes a photo of
-                    each LED, lit indiviudally. <br />
+                    each LED, lit individually. <br />
                     With some more code, I can find the brightest pixel of each
                     photo to give each LED a coordinate (x, y pixel value) and
-                    make each LED referenceble by its respective coordinate. So
+                    make each LED referenceable by its respective coordinate. So
                     now, I can sort the coordinates in x-value order and light
                     the lights up from, say, left to right. The possibilities
                     are near endless and one of the first challenges I decided
@@ -79,7 +79,7 @@
                 <div class="content scroll">
                     After a couple of small optimizations, like including the
                     light coordinates as a supplemental text file and being able
-                    to execute a certain pattern from a centralised exec file, I
+                    to execute a certain pattern from a centralized exec file, I
                     moved on to tackle rotation.
                     <br /><br />
                     The goal here was to create some really nice mathematical
@@ -216,7 +216,7 @@
                     lighting setup, with my camera of 921,600 pixels and 1280
                     horizontal pixels, I had a light sitting EXACTLY on the y
                     axis (an x value of 0). This was extremely difficult to
-                    debug as the error only occured on the 8th rotation (144
+                    debug as the error only occurred on the 8th rotation (144
                     degrees) and it was on light 270. This is truly fascinating
                     as the likelihood of a light being on the y-axis at any
                     rotation is 1/1280 or 0.00078. Not to mention that my
@@ -284,7 +284,7 @@
                     doing something like, say, calculating all of the points on
                     a spiral of a certain size and doing a bunch of trig to find
                     the closest lights, you would have a long pause between
-                    animated frames.
+                    animation frames.
                     <br /><br />
                     The last, and current, method of data transfer comes in the
                     form of precomputation on my computer. Effectively, I do
@@ -318,7 +318,7 @@
                     complex plane as a number line that is perpendicular to our
                     normal number line means that multiplying any number by i
                     will rotate it 90 degrees. If 5 is our starting point,
-                    multiplying by i give 5i. Multiplying by i again give 5i*i
+                    multiplying by i gives 5i. Multiplying by i again give 5i*i
                     and since i is the square root of -1, multiplying i by
                     itself gives -1, and multiplying -1 by 5 give -5. So
                     multiplying by i is equivalent to a 90 degree rotation, but
@@ -337,7 +337,7 @@
                     counterpart as it doesn't need to import another library and
                     it only requires 2 trig functions.<br />
                     Another way to speed this up is by creating a lookup table
-                    for rotational values. For example, if I am rotation by 18
+                    for rotational values. For example, if I am rotating by 18
                     degrees, I could create a lookup table for all the trig
                     functions I would need to perform. Given that there are only
                     20 distinct angles, this is very feasible.<br />
@@ -363,10 +363,10 @@
                     than taking 3, 8-bit values to represent different amounts
                     of red, green, and blue, HSV takes a Hue, a Saturation, and
                     a Value. HSV was actually created in the first place for
-                    purposed related to computer graphics. My main use of it was
+                    purposes related to computer graphics. My main use of it was
                     as a way to iterate through the traditional rainbow.<br /><br />
                     The traditional rainbow has 7 values, red, orange, yellow,
-                    green, blue, inigo, and violet. With RGB, I was unable to
+                    green, blue, indigo, and violet. With RGB, I was unable to
                     find a way to programmatically iterate through certain
                     values of red, green, or blue so as to allow myself to
                     create a rainbow. HSV, on the other hand, has the ability to

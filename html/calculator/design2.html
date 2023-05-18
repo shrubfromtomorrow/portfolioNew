@@ -56,7 +56,7 @@
                     spend time doing anything other than making a webapp, that
                     just so happened to run natively. <br /><br />
                     The first struggle was figuring out how I was going to take
-                    math input. I mentioned this earlier, and as it was large
+                    math input. I mentioned this earlier, and as it was a large
                     part of the design, I wanted to talk about it. I started by
                     trying to use the standard HTML input boxes as you can see
                     in the first couple images of the regular calculator gif
@@ -64,7 +64,7 @@
                     idea. Firstly, it would be incredibly difficult to make any
                     responsive math input, an instant deal breaker. Secondly,
                     the output of these input boxes would be tough to turn into
-                    an easily parseable format. Thirdly and finally, keeping
+                    an easily parsable format. Thirdly and finally, keeping
                     track of inputs and using a middleman to make something like
                     alt+p mean pi would be much more difficult.<br /><br />
                     So I quickly switched to MathQuill. MathQuill is relatively
@@ -121,7 +121,7 @@
                     and of course, getting the current value of the input box in
                     LaTeX form.<br /><br />
                     This was super cool, but now I needed to do something with
-                    that outputted LaTeX, it would be a pretty rubbish
+                    that outputted LaTeX. It would be a pretty rubbish
                     calculator if it just showed you what you inputted. So,
                     along came the source of most of my development pain,
                     Evaluatex. I really don't want this to be put-down on the
@@ -173,7 +173,7 @@ let result = +fn().toFixed(10);</code></pre>
                     height of the page at a certain interval. You then do the
                     same thing, but with the y coordinates, drawing lines every
                     certain interval across the width of the page (making sure
-                    it is the same pixel interval as you draw line vertically so
+                    it is the same pixel interval as you draw a line vertically so
                     you get square boxes). It might look something like this:
                 </div>
                 <div class="content scroll">
@@ -209,7 +209,7 @@ let result = +fn().toFixed(10);</code></pre>
                     screen will have to snap to the nearest pixel that could
                     feasibly represent a line at y=2. As in my example, the line
                     is actually halfway between two pixels on the screen grid,
-                    half of the pixels would be snap to the pixel above, and
+                    half of the pixels would snap to the pixel above, and
                     half would stay at the midpoint. <br />
                     The more closely your JS pixel grid matches the one of your
                     screen, the less blurring there will be. <br />
@@ -266,7 +266,7 @@ ctx.scale(scale, scale);</code></pre>
                     plot a line that is 8 less than the center of the screen,
                     that will be 8 PIXELS less than the center. You have to
                     scale all of your x and y pixel values by some common scalar
-                    so that they align with with the grid you have drawn.<br />
+                    so that they align with the grid you have drawn.<br />
                     And with that, you should be able to draw a function. Just
                     plug in a bunch of numbers for x, calculate the coordinates
                     and scale them to fit your graph.<br /><br />
@@ -308,8 +308,8 @@ ctx.scale(scale, scale);</code></pre>
                         />
                     </div>
                     <br />
-                    The way I fixed this is simply checks if a point is off
-                    screen and sets an "offscreen" value to true and doesn't
+                    The way I fixed this is to simply check if a point is off
+                    screen and set an "offscreen" value to true and don't
                     connect a line between it and the next point. Pretty simple
                     fix that makes a world of difference when doing anything
                     trig related.
@@ -320,7 +320,7 @@ ctx.scale(scale, scale);</code></pre>
                     nature of HTML5 canvas. HTML5 canvas is what is just a "dumb
                     pixel grid" (quoted from a random stack overflow user), this
                     means that once you change a pixel value, the canvas has no
-                    clue what the values of pixel are. It also has no concept of
+                    clue what the values of the pixel are. It also has no concept of
                     an object on the screen, so while you might think of one
                     graph of say, sin(x), as being one object (a long
                     oscillating line), the canvas does not see it as that.<br />
@@ -357,7 +357,7 @@ ctx.scale(scale, scale);</code></pre>
                     this page but it fits well here. When you create a MathQuill
                     object, it has a lot of child elements that are created. One
                     of them is considered the "active element" by JS. And it is
-                    several children deep the element that I can call MathQuill
+                    several children deep in the element that I can call MathQuill
                     API methods on.
                     <br />
                     <div id="activeElementCont">

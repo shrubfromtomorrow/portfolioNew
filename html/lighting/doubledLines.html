@@ -51,7 +51,7 @@
                     strip of lights (picture to explain). Now, PWM is really
                     fast, but it doesn't really get to shine when there are
                     microcontrollers that have to stop the data, process it, and
-                    pass it on again at every light. They takes AGES
+                    pass it on again at every light. They take AGES
                     (microseconds) to get anything done, so it seems natural to
                     try to bypass them. My thought was simple, why not use two
                     different data lines to pass information and section the
@@ -85,19 +85,19 @@
                     output into two data lines, something strange happened.
                     Basically, I had the code to show all of the updated lights
                     on line one run before showing the updated lights on line
-                    two (the code runs fast enough that there is not a noticable
+                    two (the code runs fast enough that there is not a noticeable
                     delay), but the two outputs overrode the other line. This
                     would cause, say, the bottom 150 lights to update both
                     halves and the top 150 lights would update both halves as
                     well. It turns out that while the raspberry pi has multiple
-                    (5+) dataouts (GPIO pins) that the lights can interpret,
+                    (5+) data outs (GPIO pins) that the lights can interpret,
                     there are only two LINES of output. Basically, GPIO 18 will
                     get the same signal as, say, GPIO 22, but GPIO 23 will have
                     a different signal as GPIO 18. A diagram would be best.<br />
                     As you can see, there are two different lines that cover
                     multiple output pins (the holes) and they produce individual
                     outputs. Moving the wire vertically would not change the
-                    output thought it would change the pin number, moving
+                    output though it would change the pin number, moving
                     horizontally would change the output and the pin number. So,
                     you can only get 2 different outputs on the different lines,
                     great, let's use some different pins and ... it still didn't
@@ -117,9 +117,9 @@
                     compilation of C code as C was probably the best language to
                     write code that deals with PWM in. C is illegible, at least
                     for me, as someone who had, up to this point, dealt
-                    exculsively in highly abstracted high-level languages. For
+                    exclusively in highly abstracted high-level languages. For
                     this, I had to employ my father. After some small lessons as
-                    well as a doomscroll through the code, we found several
+                    well as a doom scroll through the code, we found several
                     hints to the existence of multi-line functionality.<br />
                     After a couple days, while having a look at the issue, my
                     father tried a simple package reinstall. And that was it. We

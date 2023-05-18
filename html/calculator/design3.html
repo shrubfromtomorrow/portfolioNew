@@ -64,14 +64,14 @@
                     had a 3.5 inch diagonal and a 480x320 resolution, more than
                     necessary but again, a nice touch. The biggest issue that I
                     could see right away was the thickness. The screen stacked
-                    on top of the already bulky Raspberry Pi lead to a thickness
+                    on top of the already bulky Raspberry Pi led to a thickness
                     of 22mm. That doesn't sound like a lot but it is not
                     comfortable to hold in your hand and bothered me from the
                     start.<br />
                     Raspberry Pi started the screen in 1920x1080 for some reason
                     and so (while it was nearly illegible) I went to change the
                     resolution settings. 480x320 is not widely supported and so
-                    I did not find it as possible display output mode on the
+                    I did not find it as a possible display output mode on the
                     Raspberry Pi, a small setback but I could work through it.
                     In general 3:2 aspect ratios are not commonly supported but
                     there was a 720x480 resolution that I could use. I wanted to
@@ -102,10 +102,10 @@
                     the init.d directory, and rc.local are the main ones are
                     Raspbian. There is also the option to create a directory in
                     your Raspberry Pi's config that contains .desktop files.
-                    .desktop files are a way of integrating executables into you
-                    desktop environment. Anyways, I created one that pointed a
-                    script that change the resolution and it booted correctly
-                    first try. Crazy.<br /><br />
+                    .desktop files are a way of integrating executables into
+                    your desktop environment. Anyways, I created one that
+                    pointed to a script that changed the resolution and it
+                    booted correctly on the first try. Crazy.<br /><br />
                 </div>
                 <div class="content scroll">
                     Now I could get to putting my code onto the Raspberry Pi.
@@ -116,23 +116,23 @@
                     on the Raspberry Pi, but there were a lot of different
                     configurations in Electron that would not work on the
                     Raspberry Pi. The foremost of these is that the Raspberry Pi
-                    CPU architecture is ARM, not the x86 architecture that I
-                    was developing for on my laptop. In conjunction with this,
-                    the Raspberry Pi didn't even have Electron installed, or
-                    even Node (the framework that runs Electron). This was
-                    itself a debacle to fix but it was really just about
-                    executing the right commands, so I won't talk about it here.
-                    Now with Electron and Node installed, I was able to run
-                    commands to build my software for ARM. I got my executable
-                    and it ran perfectly the first time. There's no joke, it
-                    actually just worked.<br /><br />
+                    CPU architecture is ARM, not the x86 architecture that I was
+                    developing for on my laptop. In conjunction with this, the
+                    Raspberry Pi didn't even have Electron installed, or even
+                    Node (the framework that runs Electron). This was itself a
+                    debacle to fix but it was really just about executing the
+                    right commands, so I won't talk about it here. Now with
+                    Electron and Node installed, I was able to run commands to
+                    build my software for ARM. I got my executable and it ran
+                    perfectly the first time. There's no joke, it actually just
+                    worked.<br /><br />
                 </div>
                 <div class="content scroll">
                     Now with the software on my Raspberry Pi, I edited my
                     bash.rc to automatically start executing my calculator
                     program on start and I was good to go. I plugged in a
                     keyboard and I was able to use the calculator for the first
-                    time in an enclosed environment (in a software sens). The
+                    time in an enclosed environment (in a software sense). The
                     feeling of gratification that I now had a system that was
                     designed to do one thing was immeasurable.<br />
                     But then I had to move on to more pressing issues. I
@@ -140,13 +140,13 @@
                     was 8 times larger than the Raspberry Pi and just plugged
                     into a USB port, I needed to make my own. I had had some
                     experience with mechanical keyboards in the past and I was
-                    drawn to them. I knew that it would be bulky but I had hope
-                    that I could create one that was only in excess size of the
-                    Raspberry Pi + screen combo in terms of length (that is to
-                    say, it would be smaller in every way except the edge that
-                    protrudes towards the user).<br />
+                    drawn to them. I knew that it would be bulky but I had hoped
+                    that I could create one that was only in excess of the size
+                    of the Raspberry Pi + screen combo in terms of length (that
+                    is to say, it would be smaller in every way except the edge
+                    that protrudes towards the user).<br />
                     I quickly decided that the best-sized keyboard layout would
-                    be a 4x6 (4 columns, 6 rows). It would allow my the right
+                    be a 4x6 (4 columns, 6 rows). It would allow me the right
                     number of keys to perform all of the keystrokes I thought
                     would be necessary for a good demo (with some mod keys).
                     However, I had an issue: keyboard PCBs in 4x6 don't exist.
@@ -243,7 +243,7 @@
                     keyboard. For most regular mechanical keyboards, these
                     plates are made from CNC'd aluminium or polycarbonate. I
                     didn't have access to either of those materials nor the
-                    tools needed to manufacture with them. What I did have
+                    tools needed to manufacture them. What I did have
                     access to were 3D printers. I got some basic measurements of
                     the width, height, and thickness of a normal switchplate and
                     I created my first prototype with PETG filament.
@@ -258,11 +258,11 @@
                 </div>
                 <div class="content scroll">
                     <br />
-                    This worked well, the switches snapped in an took a bit of
+                    This worked well, the switches snapped in and took a bit of
                     effort to get out. However, a good switchplate should
                     require a tool to remove the switches and mine was not
                     nearly as secure as that. The reason that switches are hard
-                    to get out is because the have a small piece of bendable
+                    to get out is because they have a small piece of bendable
                     plastic on their sides that locks them in place.
                     <br /><br />
                 </div>
@@ -288,7 +288,7 @@
                     possibly print with is 0.05 mm and that would take decades
                     to print. On top of the time an accurate print would take
                     was the fact that using PETG meant that the switchplate was
-                    flimsy and bending it cause switches to pop out. After a few
+                    flimsy and bending it caused switches to pop out. After a few
                     prints I decided to go a new route.
                 </div>
                 <div class="content scroll">
@@ -299,9 +299,9 @@
                     flexibility of 3D printed prototypes and, most importantly,
                     could be laser cut to extreme precision.<br />
                     The first step was to take advantage of the school shop in
-                    order to take th 2 by 4 down to a more manageable size. I
+                    order to take the 2 by 4 down to a more manageable size. I
                     needed to get it to the right thickness here as the laser
-                    cutter would only be abe to help me make cuts through the
+                    cutter would only be able to help me make cuts through the
                     thin piece of wood, not get it down to a certain thickness.
                     I had a talk to the shop advisor about the best way to go
                     about this and I ended up cutting slices of the wood down to
@@ -345,7 +345,7 @@
                     microcontroller I would use for my handwired board. The
                     easiest way to do this is with a firmware called QMK. It
                     basically automatically interprets the voltage values I
-                    mentioned earlier and outputs them as USB signal. For this,
+                    mentioned earlier and outputs them as USB signals. For this,
                     all I needed to do was create a new QMK keymap and flash it
                     to my Arduino Pro Micro that I was using as a
                     microcontroller. The process was a bit annoying as defining
@@ -358,16 +358,16 @@
                 <div class="content scroll">
                     I placed the switches into the cutouts of the switchplate
                     (only doing a 3x3 board for testing) and straightened some
-                    copper wire with a power dill. I lined up the columns and
+                    copper wire with a power drill. I lined up the columns and
                     rows and soldered the columns to the pins that I determined
-                    would be the column pins for each switch. I then soldered in
+                    would be the column pins for each switch. I then soldered 
                     the diodes, put electrical tape on the copper row pieces at
                     the intersections with columns, and soldered the diodes to
                     the rows. I had had a fair amount of experience soldering in
-                    the past, but there were new challenges with this projects,
-                    mainly in how fine-tune your movements need to be (hard for
+                    the past, but there were new challenges with this project,
+                    mainly in how fine-tuned your movements need to be (hard for
                     me as I have incredibly shaky hands). <br />
-                    And just like that, I had a my first keyboard. It looked
+                    And just like that, I had my first keyboard. It looked
                     like this.
                     <br /><br />
                 </div>
