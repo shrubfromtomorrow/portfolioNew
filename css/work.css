@@ -62,12 +62,12 @@
 
 #graphingCalcTitle>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
 }
 
 #graphingCalcTitle>span>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Regular';
+    font-family: 'Iosevka Thin';
 }
 
 #calculatorImCont {
@@ -113,12 +113,12 @@
 
 #lightingIn2DTitle>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
 }
 
 #lightingIn2DTitle>span>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Regular';
+    font-family: 'Iosevka Thin';
 }
 
 #lightingIn2DImCont {
@@ -130,6 +130,15 @@
     object-fit: cover;
     width: 100%;
     aspect-ratio: 1;
+    transition: all 0.25s ease;
+}
+
+#lightingIn2DIm:hover {
+    cursor: pointer;
+    background-color: var(--Base);
+    color: var(--Text);
+    transform: translate(-.5rem, -.5rem);
+    box-shadow: .5rem .5rem var(--Text);
 }
 
 #guides {
@@ -154,12 +163,12 @@
 
 #guidesTitle>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
 }
 
 #guidesTitle>span>span {
     font-size: 1.5vw;
-    font-family: 'Iosevka Regular';
+    font-family: 'Iosevka Thin';
 }
 
 #guidesImCont {

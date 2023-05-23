@@ -23,7 +23,7 @@
 }
 
 #mainGreet>span:nth-child(3) {
-    font-family: "Iosevka Thin";
+    font-family: "Iosevka Regular";
     font-size: 3vw;
     line-height: 3vw;
 }
@@ -31,7 +31,7 @@
 
 
 #mainGreet>span:nth-child(4) {
-    font-family: "Iosevka Thin";
+    font-family: "Iosevka Regular";
     font-size: 3vw;
     line-height: 3vw;
 }
@@ -111,14 +111,32 @@
 }
 
 #graphingCalcTitle {
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
     align-items: center;
+}
+
+#graphingCalcTitle>span {
+    font-family: 'Iosevka Thin';
+}
+
+#calculatorImLink {
+    width: 20%;
+    aspect-ratio: 1;
 }
 
 #calculatorIm {
     object-fit: cover;
-    width: 20%;
+    width: 100%;
     aspect-ratio: 1;
+    transition: all 0.25s ease;
+}
+
+#calculatorIm:hover {
+    cursor: pointer;
+    background-color: var(--Base);
+    color: var(--Text);
+    transform: translate(-.5rem, -.5rem);
+    box-shadow: .5rem .5rem var(--Text);
 }
 
 #lightingIn2D {
@@ -132,14 +150,32 @@
 }
 
 #lightingIn2DTitle {
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
     align-items: center;
+}
+
+#lightingIn2DTitle>span {
+    font-family: 'Iosevka Thin';
+}
+
+#lightingIn2DImLink {
+    width: 20%;
+    aspect-ratio: 1;
 }
 
 #lightingIn2DIm {
     object-fit: cover;
-    width: 20%;
+    width: 100%;
     aspect-ratio: 1;
+    transition: all 0.25s ease;
+}
+
+#lightingIn2DIm:hover {
+    cursor: pointer;
+    background-color: var(--Base);
+    color: var(--Text);
+    transform: translate(-.5rem, -.5rem);
+    box-shadow: .5rem .5rem var(--Text);
 }
 
 #guides {
@@ -153,8 +189,12 @@
 }
 
 #guidesTitle {
-    font-family: 'Iosevka Thin';
+    font-family: 'Iosevka Regular';
     align-items: center;
+}
+
+#guidesTitle>span {
+    font-family: 'Iosevka Thin';
 }
 
 #guidesIm {
