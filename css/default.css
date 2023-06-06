@@ -76,35 +76,33 @@
 
     --Crust: #11111b;
     /* rgb(17, 17, 27) */
-
 }
-
 
 @font-face {
     font-family: "Iosevka Regular";
-    src: url("../assets/fonts/iosevka-regular.ttf") format('truetype');
+    src: url("../assets/fonts/iosevka-regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Iosevka Bold";
-    src: url("../assets/fonts/iosevka-bold.ttf") format('truetype');
+    src: url("../assets/fonts/iosevka-bold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Iosevka Thin";
-    src: url("../assets/fonts/iosevka-thin.ttf") format('truetype');
+    src: url("../assets/fonts/iosevka-thin.ttf") format("truetype");
 }
 
 @keyframes loadIn {
     from {
         transform: translateY(5%);
         opacity: 0;
-      }
-    
-      to {
+    }
+
+    to {
         transform: translateY(0%);
         opacity: 1;
-      }
+    }
 }
 
 html,
@@ -114,7 +112,7 @@ body {
 }
 
 body {
-    font-family: 'Iosevka Regular';
+    font-family: "Iosevka Regular";
     display: flex;
     background-color: var(--Text);
     color: var(--Base);
@@ -163,34 +161,34 @@ body {
     font-size: 1.25vw;
 }
 
-#navbar>a,
+#navbar > a,
 #navbar:visited,
 #navbar:link {
     color: var(--Text);
     text-decoration: none;
     font-size: clamp(1.175vw, 1.175vw, 2vw);
     line-height: 1.75;
-    padding-top: .5vw;
+    padding-top: 0.5vw;
     padding-bottom: 0vw;
     padding-left: clamp(1vw, 3vw, 3vw);
     padding-right: clamp(1vw, 3vw, 3vw);
     transition: all 0.25s ease;
     border: 2px solid var(--Sky);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
-#navbar>span {
+#navbar > span {
     padding: 1vw;
     color: var(--Sky);
 }
 
-#navbar>a:hover,
-#navbar>a:focus {
+#navbar > a:hover,
+#navbar > a:focus {
     cursor: pointer;
     background-color: var(--Base);
     color: var(--Text);
-    transform: translate(-.5rem, -.5rem);
-    box-shadow: .5rem .5rem var(--Text);
+    transform: translate(-0.5rem, -0.5rem);
+    box-shadow: 0.5rem 0.5rem var(--Text);
 }
 
 .header {
@@ -212,21 +210,21 @@ body {
     margin-right: 25vw;
 }
 
-.content>a:visited,
-.content>a:link {
+.content > a:visited,
+.content > a:link {
     color: var(--Crust);
     text-decoration: underline;
 }
-.content>a:visited:hover,
-.content>a:link:hover {
+.content > a:visited:hover,
+.content > a:link:hover {
     color: var(--Crust);
     text-decoration: none;
 }
 
 .scroll {
     transform: translateY(50px);
-    transition-delay: .3s;
-    transition: .4s;
+    transition-delay: 0.3s;
+    transition: 0.4s;
     opacity: 0;
 }
 
@@ -292,12 +290,37 @@ strong {
     object-fit: cover;
 }
 
-.vi
-
-.math {
+.vi .math {
     /* width: 100%; */
     justify-content: center;
 }
+
+.list {
+    list-style: disc inside;
+    padding-left: 1rem;
+}
+
+.list li {
+    font-size: 1.5vw;
+}
+
+.list2 {
+    list-style: square inside;
+    padding-left: 2rem;
+}
+
+.list2 li {
+    font-size: 1.5vw;
+}
+
+/* .list li::before {
+    content: "\2022"; 
+    color: var(--Base);
+    font-weight: bold; 
+    display: inline-block;
+    width: 1em; 
+    margin-left: -1em;
+} */
 
 code {
     font-size: 1vw;

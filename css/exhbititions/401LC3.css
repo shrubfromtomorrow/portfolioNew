@@ -1,0 +1,73 @@
+#calcGreetCont {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+
+#calcGreet {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 10vw;
+    font-size: 9vw;
+    color: var(--Sky);
+    /* text-shadow: -.175rem .175rem var(--Text); */
+}
+
+#calcSum {
+    animation-name: loadIn;
+    animation-duration: 1s;
+    display: block;
+    font-family: "Iosevka Regular";
+    margin-left: 15vw;
+    font-size: 1.5vw;
+    line-height: 3vw;
+}
+
+#project {
+    background-color: var(--Text);
+    color: var(--Base);
+}
+
+#designLinkCont {
+    margin: 7.5vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+}
+
+#designLink {
+    color: var(--Base);
+    background-color: var(--Text);
+    transition: all 0.25s ease;
+    padding: 1vw;
+    border: 1px solid var(--Text);
+    border-radius: 0.5rem;
+}
+
+#designLink:hover {
+    cursor: pointer;
+    border: 1px solid var(--Base);
+}
+
+#mathCont {
+    width: 100%;
+    justify-content: center;
+}
+
+#math {
+    width: 100%;
+    height: 47%;
+    object-fit: cover;
+}
+
+#footer {
+    background-color: var(--Text);
+    position: relative;
+    height: 30vh;
+}
