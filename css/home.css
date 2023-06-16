@@ -203,6 +203,7 @@
 }
 
 #footer {
+    background-color: var(--Text);
     position: relative;
     height: 30vh;
 }

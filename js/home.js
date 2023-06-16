@@ -10,7 +10,7 @@ let fetchStringLines = [
     "│          <span>✦</span>          │  <span>Stars</span>: <a href='https://github.com/Haruno19/starfetch' target='_blank'>starfetch</a>\n",
     "│      <span>✦</span>              │  <span>Location</span>: Seattle\n",
     "│             <span>✦</span>       │  <span>Uptime</span>: 17y\n",
-    "│                      │  <span>Corp</span>: Gibson Ek HS\n",
+    "│                      │  <span>Corp</span>: Graduated GEHS\n",
     "│        <span>✦</span> <span>✦</span> <span>✦</span>      │  <span>Colors</span>: <a href='https://github.com/catppuccin/catppuccin' target='_blank'>Catppuccin</a>\n",
     "│                      │  <span>Font</span>: <a href='https://typeof.net/Iosevka' target='_blank'>Iosevka</a>\n",
     "│              <span>✦</span>      │  <span>Github</span>: <a href='https://github.com/shrubfromtomorrow' target='_blank'>shrubfromtomorrow</a>\n",
